@@ -2,10 +2,10 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md)
 
-[![Tests](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml/badge.svg)](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/iamjosuho/ogame-agent/actions)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Python: >=3.11](https://img.shields.io/badge/python->=3.11-brightgreen.svg)](pyproject.toml)
-[![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](#platform-limitations--faq)
+[![Python: >=3.11](https://img.shields.io/badge/python-%3E%3D3.11-brightgreen.svg)](pyproject.toml)
+[![Platform: macOS](https://img.shields.io/badge/Platform-macOS-black.svg?logo=apple&logoColor=white)](#platform-limitations--faq)
 
 An experimental AI agent project that autonomously and safely manages an [OGame](https://gameforge.com/en-US/play/ogame) account within an active session using LLM reasoning and structured guardrails.
 

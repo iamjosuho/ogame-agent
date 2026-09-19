@@ -2,10 +2,10 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md)
 
-[![Tests](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml/badge.svg)](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/iamjosuho/ogame-agent/actions)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Python: >=3.11](https://img.shields.io/badge/python->=3.11-brightgreen.svg)](pyproject.toml)
-[![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](#平台限制與常見問題-faq)
+[![Python: >=3.11](https://img.shields.io/badge/python-%3E%3D3.11-brightgreen.svg)](pyproject.toml)
+[![Platform: macOS](https://img.shields.io/badge/Platform-macOS-black.svg?logo=apple&logoColor=white)](#平台限制與常見問題-faq)
 
 這是一個實驗性專案，旨在透過大型語言模型（LLM）Agent 在維持登入的瀏覽器 Session 中，結合結構化安全護欄，自主、安全且符合人類節奏地經營一個 [OGame](https://gameforge.com/zh-TW/play/ogame) 帳號。
 
