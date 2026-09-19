@@ -560,6 +560,21 @@ def command_commit_patrol(args: argparse.Namespace, *, lease_file: Optional[str]
         return err_output
 
 
+def normalize_server_url(raw_url: str) -> str:
+    """Normalize OGame universe URL into standard https://host/game/index.php format."""
+    url = raw_url.strip().rstrip("/")
+    if not url.startswith("http://") and not url.startswith("https://"):
+        url = f"https://{url}"
+    if url.endswith(".gameforge"):
+        url = f"{url}.com"
+    if not url.endswith("/game/index.php"):
+        if "/game" in url:
+            url = url.split("/game")[0] + "/game/index.php"
+        else:
+            url = f"{url}/game/index.php"
+    return url
+
+
 def command_init(args: argparse.Namespace) -> Dict[str, Any]:
     """Initialize configuration and runtime memory files from examples, with optional server URL prompt."""
     import glob
@@ -608,7 +623,7 @@ def command_init(args: argparse.Namespace) -> Dict[str, Any]:
     final_univ = current_univ
 
     if cli_url is not None:
-        final_url = cli_url.strip()
+        final_url = normalize_server_url(cli_url)
         if cli_univ is not None:
             final_univ = cli_univ.strip() or None
         configured_server = True
@@ -618,7 +633,7 @@ def command_init(args: argparse.Namespace) -> Dict[str, Any]:
             prompt_msg = f"  請輸入 OGame 伺服器網址 [預設: {current_url}]: "
             user_url = input(prompt_msg).strip()
             if user_url:
-                final_url = user_url
+                final_url = normalize_server_url(user_url)
 
             prompt_univ = f"  請輸入宇宙名稱（多宇宙帳號選填，無則留空）[{current_univ or '無'}]: "
             user_univ = input(prompt_univ).strip()
@@ -678,7 +693,7 @@ def command_init(args: argparse.Namespace) -> Dict[str, Any]:
         else:
             lines.append(f"  [OK] Created {c}")
     for s in skipped:
-        lines.append(f"  [SKIP] {s} already exists (use --force or --url to update)")
+        lines.append(f"  [SKIP] {s} already exists (use --force to overwrite)")
     lines.append("")
     lines.append("Initialization complete!")
     lines.append(f"  Active server URL: {final_url}")

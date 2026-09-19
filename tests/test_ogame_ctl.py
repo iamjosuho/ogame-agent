@@ -87,7 +87,7 @@ class OGameControllerTests(unittest.TestCase):
     def test_empire_url_is_fixed_same_origin_standalone_read(self):
         self.assertEqual(
             ogame_ctl.empire_url(),
-            "https://s1-en.ogame.gameforge.com/game/index.php?page=standalone&component=empire",
+            f"{ogame_ctl.GAME_BASE_URL}?page=standalone&component=empire",
         )
         gate = ogame_ctl.checked_js("JSON.stringify({success:true})")
         self.assertIn('page === "standalone"', gate)
@@ -1883,16 +1883,16 @@ class OGameControllerTests(unittest.TestCase):
                 self.assertTrue(any("server.toml" in c for c in res3["created"]))
                 self.assertIn(os.path.relpath(os.path.join(mem_dir, "GameState.md"), tmpdir), res3["created"])
 
-                # 4. Fourth run: update URL and universe via CLI arguments
-                args_custom = argparse.Namespace(force=False, output="json", url="https://custom.ogame.com", universe="Mars", non_interactive=True)
+                # 4. Fourth run: update URL and universe via CLI arguments (with auto-normalization)
+                args_custom = argparse.Namespace(force=False, output="json", url="https://s177-tw.ogame.gameforge", universe="Ymir", non_interactive=True)
                 res4 = ogame_ctl.command_init(args_custom)
                 self.assertEqual(res4["status"], "ok")
-                self.assertEqual(res4["server"]["base_url"], "https://custom.ogame.com")
-                self.assertEqual(res4["server"]["universe_name"], "Mars")
+                self.assertEqual(res4["server"]["base_url"], "https://s177-tw.ogame.gameforge.com/game/index.php")
+                self.assertEqual(res4["server"]["universe_name"], "Ymir")
                 with open(os.path.join(cfg_dir, "server.toml"), "r", encoding="utf-8") as f:
                     content = f.read()
-                self.assertIn('base_url = "https://custom.ogame.com"', content)
-                self.assertIn('universe_name = "Mars"', content)
+                self.assertIn('base_url = "https://s177-tw.ogame.gameforge.com/game/index.php"', content)
+                self.assertIn('universe_name = "Ymir"', content)
 
 
 if __name__ == "__main__":
