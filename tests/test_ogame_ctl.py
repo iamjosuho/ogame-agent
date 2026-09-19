@@ -1842,6 +1842,59 @@ class OGameControllerTests(unittest.TestCase):
             self.assertIn("git", git_add_args)
             self.assertIn("add", git_add_args)
 
+    def test_command_init_creates_files_and_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # Create a mock environment
+            cfg_dir = os.path.join(tmpdir, "scripts", "ogame", "config")
+            mem_dir = os.path.join(tmpdir, "runtime", "memory")
+            os.makedirs(cfg_dir, exist_ok=True)
+            os.makedirs(mem_dir, exist_ok=True)
+
+            server_ex = os.path.join(cfg_dir, "server.example.toml")
+            with open(server_ex, "w", encoding="utf-8") as f:
+                f.write('base_url = "https://example.ogame.gameforge.com/game/index.php"\n')
+
+            game_ex = os.path.join(mem_dir, "GameState.example.md")
+            with open(game_ex, "w", encoding="utf-8") as f:
+                f.write("# GameState Example\n")
+
+            with patch("scripts.ogame.lifecycle.PROJECT_ROOT", tmpdir):
+                # 1. First run: should create
+                args = argparse.Namespace(force=False, output="json")
+                res = ogame_ctl.command_init(args)
+                self.assertEqual(res["status"], "ok")
+                self.assertIn(os.path.relpath(os.path.join(cfg_dir, "server.toml"), tmpdir), res["created"])
+                self.assertIn(os.path.relpath(os.path.join(mem_dir, "GameState.md"), tmpdir), res["created"])
+                self.assertTrue(os.path.exists(os.path.join(cfg_dir, "server.toml")))
+                self.assertTrue(os.path.exists(os.path.join(mem_dir, "GameState.md")))
+
+                # 2. Second run: should skip (idempotent)
+                res2 = ogame_ctl.command_init(args)
+                self.assertEqual(res2["status"], "ok")
+                self.assertEqual(res2["created"], [])
+                self.assertIn(os.path.relpath(os.path.join(cfg_dir, "server.toml"), tmpdir), res2["skipped"])
+                self.assertIn(os.path.relpath(os.path.join(mem_dir, "GameState.md"), tmpdir), res2["skipped"])
+
+                # 3. Third run with force=True: should recreate
+                args_force = argparse.Namespace(force=True, output="json", url=None, universe=None, non_interactive=True)
+                res3 = ogame_ctl.command_init(args_force)
+                self.assertEqual(res3["status"], "ok")
+                self.assertEqual(res3["skipped"], [])
+                self.assertTrue(any("server.toml" in c for c in res3["created"]))
+                self.assertIn(os.path.relpath(os.path.join(mem_dir, "GameState.md"), tmpdir), res3["created"])
+
+                # 4. Fourth run: update URL and universe via CLI arguments
+                args_custom = argparse.Namespace(force=False, output="json", url="https://custom.ogame.com", universe="Mars", non_interactive=True)
+                res4 = ogame_ctl.command_init(args_custom)
+                self.assertEqual(res4["status"], "ok")
+                self.assertEqual(res4["server"]["base_url"], "https://custom.ogame.com")
+                self.assertEqual(res4["server"]["universe_name"], "Mars")
+                with open(os.path.join(cfg_dir, "server.toml"), "r", encoding="utf-8") as f:
+                    content = f.read()
+                self.assertIn('base_url = "https://custom.ogame.com"', content)
+                self.assertIn('universe_name = "Mars"', content)
+
 
 if __name__ == "__main__":
     unittest.main()
+

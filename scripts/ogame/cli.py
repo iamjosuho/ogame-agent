@@ -32,6 +32,13 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # check-wake
+    p_init = subparsers.add_parser("init", aliases=["initialize"], help="Initialize configuration files and runtime memory templates")
+    p_init.add_argument("--url", "--base-url", dest="url", help="OGame universe base URL (e.g. https://s1-en.ogame.gameforge.com/game/index.php)")
+    p_init.add_argument("--universe", "--universe-name", dest="universe", help="Optional universe name for multi-universe lobby accounts")
+    p_init.add_argument("--non-interactive", action="store_true", help="Do not prompt interactively for missing server info")
+    p_init.add_argument("--force", action="store_true", help="Overwrite existing configuration and memory files")
+    p_init.add_argument("--output", choices=["human", "json"], default="human")
+
     p_check_wake = subparsers.add_parser("check-wake", help="Check next_wake gate without touching Chrome")
     p_check_wake.add_argument("--force", action="store_true", help="Ignore next_wake and allow connection")
     p_check_wake.add_argument("--acquire", action="store_true", help="Atomically acquire the single-run patrol lease")
@@ -425,6 +432,8 @@ def dispatch_command(args: argparse.Namespace, controller_globals: Optional[Dict
         req_lease(args.run_id)
 
     dispatch_map = {
+        "init": ("command_init", _lifecycle.command_init),
+        "initialize": ("command_init", _lifecycle.command_init),
         "patrol-start": ("command_patrol_start", _patrol_start.command_patrol_start),
         "check-wake": ("command_check_wake", _lifecycle.command_check_wake),
         "patrol-step": ("command_patrol_step", _lifecycle.command_patrol_step),

@@ -5,7 +5,7 @@
 [![Tests](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml/badge.svg)](https://github.com/iamjosuho/ogame-agent/actions/workflows/test.yml)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Python: >=3.11](https://img.shields.io/badge/python->=3.11-brightgreen.svg)](pyproject.toml)
-[![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](#platform-limitations)
+[![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](#platform-limitations--faq)
 
 An experimental AI agent project that autonomously and safely manages an [OGame](https://gameforge.com/en-US/play/ogame) account within an active session using LLM reasoning and structured guardrails.
 
@@ -13,9 +13,104 @@ The agent's "code" comprises curated domain knowledge files, operational Standar
 
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following 4 prerequisites ready:
+
+1. **System & Runtime**: **macOS** with **Python `>= 3.11`** installed (uses built-in standard library, **zero external package dependencies**).
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/iamjosuho/ogame-agent.git
+   cd ogame-agent
+   ```
+3. **Browser Login & Obtain Universe URL**:
+   - Log into your OGame universe account in **Google Chrome** and keep the game tab open.
+   - Copy your universe URL from the address bar (e.g., `https://s1-en.ogame.gameforge.com/game/index.php`).
+4. **🚨 Essential Chrome Setting (Required ⚠️)**:
+   - In Google Chrome's top menu bar, open: **"View"** → **"Developer"** → check **"Allow JavaScript from Apple Events"**.  
+   - *(This is macOS Chrome's native security control allowing local AppleScript communication; omitting this triggers an authorization error.)*
+
+---
+
+## ⚡ Quick Start
+
+Choose your preferred way to get started:
+
+### 🤖 Option A (Recommended): Let your AI Agent handle everything!
+
+If you are using an AI Coding Agent such as [Google Antigravity](https://github.com/google-deepmind), **Claude Code**, **Cursor**, or **Windsurf**, you **don't need to type terminal commands manually**:
+
+1. Open this repository folder in your AI Agent workspace.
+2. Grab your logged-in OGame universe URL.
+3. Prompt your Agent:
+   > 💬 *"I am logged into OGame in Chrome. My universe URL is `<YOUR_UNIVERSE_URL>`. Please read `README.md`, initialize this project, and verify connection by running `matrix`!"*
+
+The Agent will inspect the README, run initialization with your URL, and report your empire snapshot immediately!
+
+---
+
+### 💻 Option B: Manual Terminal 3-Step Setup
+
+If you prefer running commands yourself in the terminal:
+
+#### Step 1: Initialize Environment & Server URL
+Run the built-in `init` command to set up memory stores and configure your server URL:
+```bash
+python3 scripts/ogame_ctl.py init
+```
+An interactive prompt will guide you through entering your universe URL:
+```text
+[INIT] Setting OGame server connection info:
+  Enter your OGame universe URL [default: https://s1-en.ogame.gameforge.com/game/index.php]: 
+  Enter universe name (optional for multi-universe accounts) [None]: 
+```
+> [!TIP]
+> **One-liner CLI flag**: You can also supply the URL directly via CLI flags to skip prompting:  
+> `python3 scripts/ogame_ctl.py init --url "https://s1-en.ogame.gameforge.com/game/index.php"`  
+> To switch universes later, simply re-run `init --url <NEW_URL>` anytime!
+
+#### Step 2: Verify Connection (Hello World Test)
+Ensure Google Chrome is open on your logged-in OGame page, then run:
+```bash
+python3 scripts/ogame_ctl.py matrix
+```
+> 🎉 **Success!** If your terminal renders a clean dashboard showing your planets' resources, construction queues, and power levels, your environment and browser bridge are fully ready!
+
+#### Step 3: Configure Ship Cargo Capacities (SSOT)
+In OGame, real ship cargo capacities are dynamically modified by Hyperspace Technology, Collector class bonuses (+25%), and Lifeform research. Open `scripts/ogame/config/constants.toml` and enter your account's exact, live in-game capacities:
+
+```toml
+schema_version = 1
+
+[cargo_capacities]
+"202" = 5000   # Small Cargo capacity
+"203" = 25000  # Large Cargo capacity
+```
+
+> [!IMPORTANT]
+> **Single Source of Truth (SSOT)**: The agent never guesses cargo capacities or falls back to arbitrary defaults. Accurate values ensure reliable logistics and raid planning.
+
+*(Optional)* You can also customize `scripts/ogame/config/strategy.toml` to tweak energy squeeze margins, transport thresholds, and inactive raid loot limits.
+
+---
+
+## Core Philosophy & Guardrails
+
+1. **Safety over Efficiency**: Better to miss an upgrade cycle than perform an action that exposes automation patterns or risks fleet loss.
+2. **Fail-Closed**: If unexpected page structures, modal dialogs, or anti-bot checks appear, immediately halt and alert the user.
+3. **⚡ Energy Squeeze**: Power plants operate in tight coordination with mine upgrades, allowing energy deficits down to $\ge -20\text{ ⚡}$ to maximize economic throughput.
+4. **Hard Red-Line Guardrails (🚨 Strictly Enforced)**:
+   - Zero real-money or Dark Matter purchases.
+   - Zero stored credentials; never enter passwords.
+   - Never initiate diplomatic messaging or reply to in-game player PMs.
+   - Never attack active players or defended planets (only `(i)`/`(I)` inactive farms with 0 defense and 0 fleet).
+   - Always preserve at least **1 available Fleet Slot** for emergency fleetsave.
+
+---
+
 ## Architecture
 
-The system operates on an automated patrol cycle, driven by an external scheduler (e.g., Antigravity Scheduled Tasks or Cron), coordinating through typed Python execution primitives and strict safety guardrails.
+The system operates on an automated patrol cycle, driven by an external scheduler (e.g., Antigravity Scheduled Tasks or Cron), coordinating through typed Python execution primitives and strict safety guardrails:
 
 ```
 +--------------------------------------------------------------------------+
@@ -73,12 +168,68 @@ The system operates on an automated patrol cycle, driven by an external schedule
 +---------------------------------+     +----------------------------------+
 ```
 
-### Core Philosophy
+---
 
-1. **Safety over Efficiency**: Better to miss an upgrade cycle than perform an action that exposes automation patterns or risks fleet loss.
-2. **Fail-Closed**: If unexpected page structures, modal dialogs, or anti-bot checks appear, immediately halt and alert the user.
-3. **⚡ Energy Squeeze**: Power plants operate in tight coordination with mine upgrades, allowing energy deficits down to $\ge -20\text{ ⚡}$ to maximize economic throughput.
-4. **Single Source of Truth (SSOT)**: Ship cargo capacities and account-specific bonuses are explicitly declared in `scripts/ogame/config/constants.toml`. Capacities are never guessed or inferred with fallback defaults.
+## Running & CLI Reference
+
+All interactions are driven through `scripts/ogame_ctl.py`.
+
+### Inspection & Telemetry (Read-Only)
+
+```bash
+# Display overall empire status (resources, mines, queues, energy)
+python3 scripts/ogame_ctl.py matrix
+
+# Synchronize all planets via the standalone Empire view
+python3 scripts/ogame_ctl.py sync-all
+
+# List owned planets and their internal cp IDs
+python3 scripts/ogame_ctl.py list-planets
+
+# Check active fleet movements
+python3 scripts/ogame_ctl.py events --planet-id <PLANET_ID>
+
+# Calculate mine upgrade Return on Investment (ROI)
+python3 scripts/ogame_ctl.py roi --planet-id <PLANET_ID> --run-id <RUN_ID>
+```
+
+### Specific Operations
+
+```bash
+# Upgrade building or mine (Tech ID 1 = Metal Mine)
+python3 scripts/ogame_ctl.py build 1 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
+
+# Upgrade research (Tech ID 113 = Energy Technology)
+python3 scripts/ogame_ctl.py research 113 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
+
+# Dispatch transport to target coordinates [Galaxy:System:Position]
+python3 scripts/ogame_ctl.py transport 1 2 3 --planet-id <PLANET_ID> --run-id <RUN_ID> \
+  --metal 10000 --crystal 5000 --ship-tech 203 --ship-amount 1 --confirm
+
+# Dispatch single-probe quick-spy to target coordinates
+python3 scripts/ogame_ctl.py spy 1 2 4 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
+
+# Rapid colony bootstrapping (automatic robotics/mines/solar progression)
+python3 scripts/ogame_ctl.py colony-bootstrap --planet-id <COLONY_ID> --run-id <RUN_ID> --mode plan
+```
+
+### Autonomous Patrol Workflow
+
+A typical patrol cycle initiated by the agent:
+
+```bash
+# 1. Acquire single-instance lease and retrieve fresh sources
+python3 scripts/ogame_ctl.py patrol-start --output json
+
+# 2. Generate an immutable workflow plan
+python3 scripts/ogame_ctl.py workflow plan --run-id <RUN_ID> --planet-id <PLANET_ID> --output json
+
+# 3. Execute planned steps with fail-closed safety checks
+python3 scripts/ogame_ctl.py workflow run --workflow-id <WORKFLOW_ID> --run-id <RUN_ID> --confirm --output json
+
+# 4. Release run lease and commit memory state
+python3 scripts/ogame_ctl.py finish-run --run-id <RUN_ID> --record-tokens
+```
 
 ---
 
@@ -152,154 +303,6 @@ The system operates on an automated patrol cycle, driven by an external schedule
 
 ---
 
-## Prerequisites
-
-- **Operating System**: macOS (Required for AppleScript / Apple Events browser interaction).
-- **Python**: Python `>= 3.11` (Utilizes standard library `tomllib`). No external third-party dependencies required.
-- **Web Browser**: Google Chrome. You must be logged into your OGame universe account in an active tab.
-- **Agent Environment**: [Google Antigravity](https://github.com/google-deepmind) (or an equivalent LLM agent environment capable of running bash commands and scheduling tasks).
-
----
-
-## Installation & Configuration
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/iamjosuho/ogame-agent.git
-cd ogame-agent
-```
-
-### 2. Configure Server URL
-
-Copy the template configuration to `server.toml`:
-
-```bash
-cp scripts/ogame/config/server.example.toml scripts/ogame/config/server.toml
-```
-
-Edit `scripts/ogame/config/server.toml` to specify your universe URL:
-
-```toml
-base_url = "https://s1-en.ogame.gameforge.com/game/index.php"
-# Optional: if your lobby account has multiple universes, specify the universe name
-# universe_name = "Earth"
-```
-
-> [!NOTE]
-> `server.toml` is excluded by `.gitignore` to prevent leaking server details or account URLs.
-
-### 3. Configure Cargo Capacities (Single Source of Truth)
-
-In OGame, ship cargo capacity is modified dynamically by Hyperspace Technology, Collector class (+25%), and Lifeform research. Open `scripts/ogame/config/constants.toml` and update the values with your account's exact, live capacities:
-
-```toml
-schema_version = 1
-
-[cargo_capacities]
-"202" = 5000   # Small Cargo capacity
-"203" = 25000  # Large Cargo capacity
-```
-
-> [!IMPORTANT]
-> The agent never guesses cargo capacities or falls back to arbitrary defaults. Accurate values ensure reliable logistics and raid planning.
-
-### 4. Adjust Strategy Profiles
-
-Customize `scripts/ogame/config/strategy.toml` to adjust energy squeeze margins, logistics boundaries, and farming target criteria:
-
-```toml
-[power_squeeze]
-enabled = true
-surplus_threshold = 30
-target_energy = 0
-
-[logistics]
-minimum_transport_amount = 1000
-maximum_transport_per_resource = 10000
-
-[farming]
-minimum_raid_loot = 5000
-max_concurrent_raids = 2
-```
-
-### 5. Initialize Memory Files
-
-Create your local runtime memory files from the provided templates:
-
-```bash
-cp runtime/memory/GameState.example.md runtime/memory/GameState.md
-cp runtime/memory/TODO.example.md runtime/memory/TODO.md
-cp runtime/memory/farm_targets.example.md runtime/memory/farm_targets.md
-cp runtime/memory/patrol-log.example.md runtime/memory/patrol-log.md
-cp runtime/memory/errors.example.md runtime/memory/errors.md
-```
-
----
-
-## Running & CLI Reference
-
-All interactions are driven through `scripts/ogame_ctl.py`.
-
-### Inspection & Telemetry (Read-Only)
-
-```bash
-# Display overall empire status (resources, mines, queues, energy)
-python3 scripts/ogame_ctl.py matrix
-
-# Synchronize all planets via the standalone Empire view
-python3 scripts/ogame_ctl.py sync-all
-
-# List owned planets and their internal cp IDs
-python3 scripts/ogame_ctl.py list-planets
-
-# Check active fleet movements
-python3 scripts/ogame_ctl.py events --planet-id <PLANET_ID>
-
-# Calculate mine upgrade Return on Investment (ROI)
-python3 scripts/ogame_ctl.py roi --planet-id <PLANET_ID> --run-id <RUN_ID>
-```
-
-### Autonomous Patrol Workflow
-
-A typical patrol cycle initiated by the agent:
-
-```bash
-# 1. Acquire single-instance lease and retrieve fresh sources
-python3 scripts/ogame_ctl.py patrol-start --output json
-
-# 2. Generate an immutable workflow plan
-python3 scripts/ogame_ctl.py workflow plan --run-id <RUN_ID> --planet-id <PLANET_ID> --output json
-
-# 3. Execute planned steps with fail-closed safety checks
-python3 scripts/ogame_ctl.py workflow run --workflow-id <WORKFLOW_ID> --run-id <RUN_ID> --confirm --output json
-
-# 4. Release run lease and commit memory state
-python3 scripts/ogame_ctl.py finish-run --run-id <RUN_ID> --record-tokens
-```
-
-### Specific Operations
-
-```bash
-# Upgrade building or mine (Tech ID 1 = Metal Mine)
-python3 scripts/ogame_ctl.py build 1 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
-
-# Upgrade research (Tech ID 113 = Energy Technology)
-python3 scripts/ogame_ctl.py research 113 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
-
-# Dispatch transport to target coordinates [Galaxy:System:Position]
-python3 scripts/ogame_ctl.py transport 1 2 3 --planet-id <PLANET_ID> --run-id <RUN_ID> \
-  --metal 10000 --crystal 5000 --ship-tech 203 --ship-amount 1 --confirm
-
-# Dispatch single-probe quick-spy to target coordinates
-python3 scripts/ogame_ctl.py spy 1 2 4 --planet-id <PLANET_ID> --run-id <RUN_ID> --confirm
-
-# Rapid colony bootstrapping (automatic robotics/mines/solar progression)
-python3 scripts/ogame_ctl.py colony-bootstrap --planet-id <COLONY_ID> --run-id <RUN_ID> --mode plan
-```
-
----
-
 ## Testing
 
 The test suite validates CLI argument dispatching, planning algorithms, policy guardrails, and data parsers using offline fixtures:
@@ -312,13 +315,18 @@ All tests execute entirely offline without requiring a live Chrome session or ex
 
 ---
 
-## Platform Limitations
+## Platform Limitations & FAQ
 
-- **macOS Only**: This project currently supports **macOS exclusively**.
-- **Browser Automation Rationale**: Rather than relying on Selenium, Playwright, or headless CDP drivers—which frequently trigger automated anti-bot fingerprinting—this project interfaces directly with an active, existing **Google Chrome** tab via **AppleScript (`osascript`)**.
+- **macOS Exclusively**: This project currently supports **macOS only** due to its deep integration with macOS Apple Events.
+- **Why AppleScript instead of Selenium / Playwright?**
+  - Headless CDP browsers often trigger bot-detection fingerprinting and Cloudflare/Gameforge challenges.
+  - Interacting with an active, existing **Google Chrome** tab via **AppleScript (`osascript`)** executes within your genuine player session with native human-like timing.
 - **Security & Privacy**:
   - No account credentials or passwords are ever stored, typed, or transmitted by the scripts.
   - The human player logs in naturally through Chrome. The scripts simply operate within that authenticated session.
+- **Common Troubleshooting**:
+  - *AppleScript Error: Executing JavaScript through AppleScript is turned off*:
+    Check that Chrome has enabled **View** → **Developer** → **Allow JavaScript from Apple Events**.
 
 ---
 

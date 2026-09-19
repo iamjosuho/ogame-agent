@@ -25,14 +25,18 @@ SERVER_EXAMPLE_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config", "
 
 
 def load_server_config(path: Optional[str] = None) -> Dict[str, Any]:
-    """Load server configuration from server.toml; fail-closed if missing or malformed."""
+    """Load server configuration from server.toml; auto-bootstrap from example or fail-closed."""
     target_path = path or SERVER_CONFIG_PATH
     if not os.path.isfile(target_path):
-        raise RuntimeError(
-            f"找不到伺服器配置檔：{target_path}。\n"
-            "請複製 scripts/ogame/config/server.example.toml 為 server.toml 並填入您的 OGame 伺服器資訊：\n"
-            "  cp scripts/ogame/config/server.example.toml scripts/ogame/config/server.toml"
-        )
+        if target_path == SERVER_CONFIG_PATH and os.path.isfile(SERVER_EXAMPLE_CONFIG_PATH):
+            import shutil
+            shutil.copyfile(SERVER_EXAMPLE_CONFIG_PATH, target_path)
+        else:
+            raise RuntimeError(
+                f"找不到伺服器配置檔：{target_path}。\n"
+                "請複製 scripts/ogame/config/server.example.toml 為 server.toml 並填入您的 OGame 伺服器資訊：\n"
+                "  cp scripts/ogame/config/server.example.toml scripts/ogame/config/server.toml"
+            )
     try:
         with open(target_path, "rb") as f:
             data = tomllib.load(f)

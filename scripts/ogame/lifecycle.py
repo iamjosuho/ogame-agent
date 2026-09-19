@@ -16,6 +16,10 @@ import subprocess
 import sys
 import time
 from typing import Any, Callable, Dict, Optional
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib  # type: ignore[no-redef]
 
 from scripts.ogame.patrol_contract import (
     PATROL_PHASES,
@@ -519,9 +523,8 @@ def command_commit_patrol(args: argparse.Namespace, *, lease_file: Optional[str]
             existing_targets = [f for f in target_files if os.path.exists(os.path.join(repo_root, f))]
             if existing_targets:
                 subprocess.run(["git", "add", "--"] + existing_targets, cwd=repo_root, check=False)
-            deleted_targets = [f for f in target_files if not os.path.exists(os.path.join(repo_root, f))]
-            if deleted_targets:
-                subprocess.run(["git", "add", "-u", "--"] + deleted_targets, cwd=repo_root, check=False)
+            else:
+                subprocess.run(["git", "add", "-u", "--"] + target_files, cwd=repo_root, check=False)
 
         # 4. 檢查是否有 staged changes
         diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo_root)
@@ -555,3 +558,136 @@ def command_commit_patrol(args: argparse.Namespace, *, lease_file: Optional[str]
         }
         print_command_output(args, err_output, f"git commit exception: {exc}")
         return err_output
+
+
+def command_init(args: argparse.Namespace) -> Dict[str, Any]:
+    """Initialize configuration and runtime memory files from examples, with optional server URL prompt."""
+    import glob
+    import shutil
+
+    force = getattr(args, "force", False)
+    repo_root = PROJECT_ROOT
+    created: List[str] = []
+    skipped: List[str] = []
+
+    # 1. Ensure runtime directories exist
+    memory_dir = os.path.join(repo_root, "runtime", "memory")
+    screenshots_dir = os.path.join(repo_root, "runtime", "screenshots")
+    os.makedirs(memory_dir, exist_ok=True)
+    os.makedirs(screenshots_dir, exist_ok=True)
+
+    # 2. Configure server.toml
+    server_target = os.path.join(repo_root, "scripts", "ogame", "config", "server.toml")
+    server_example = os.path.join(repo_root, "scripts", "ogame", "config", "server.example.toml")
+    rel_server = os.path.relpath(server_target, repo_root)
+
+    current_url = "https://s1-en.ogame.gameforge.com/game/index.php"
+    current_univ: Optional[str] = None
+    if os.path.isfile(server_target):
+        try:
+            with open(server_target, "rb") as f:
+                cfg = tomllib.load(f)
+                if isinstance(cfg, dict):
+                    if cfg.get("base_url"):
+                        current_url = cfg["base_url"]
+                    if cfg.get("universe_name"):
+                        current_univ = cfg["universe_name"]
+        except Exception:
+            pass
+
+    cli_url = getattr(args, "url", None)
+    cli_univ = getattr(args, "universe", None)
+    is_interactive = (
+        sys.stdin.isatty()
+        and not getattr(args, "non_interactive", False)
+        and getattr(args, "output", "human") != "json"
+    )
+
+    configured_server = False
+    final_url = current_url
+    final_univ = current_univ
+
+    if cli_url is not None:
+        final_url = cli_url.strip()
+        if cli_univ is not None:
+            final_univ = cli_univ.strip() or None
+        configured_server = True
+    elif is_interactive:
+        print("[INIT] 設定 OGame 伺服器連線資訊：")
+        try:
+            prompt_msg = f"  請輸入 OGame 伺服器網址 [預設: {current_url}]: "
+            user_url = input(prompt_msg).strip()
+            if user_url:
+                final_url = user_url
+
+            prompt_univ = f"  請輸入宇宙名稱（多宇宙帳號選填，無則留空）[{current_univ or '無'}]: "
+            user_univ = input(prompt_univ).strip()
+            if user_univ:
+                final_univ = user_univ
+            elif not user_univ and current_univ:
+                final_univ = current_univ
+            configured_server = True
+        except (KeyboardInterrupt, EOFError):
+            print("\n已略過互動輸入。")
+
+    if configured_server or not os.path.exists(server_target) or force:
+        lines_cfg = [
+            "# OGame server configuration",
+            "# Generated or updated via ogame_ctl.py init",
+            f'base_url = "{final_url}"',
+        ]
+        if final_univ:
+            lines_cfg.append(f'universe_name = "{final_univ}"')
+        else:
+            lines_cfg.append('# universe_name = "Earth"')
+        lines_cfg.append("")
+        with open(server_target, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines_cfg))
+        created.append(rel_server)
+    else:
+        skipped.append(rel_server)
+
+    # 3. Initialize memory files from *.example.md
+    example_files = glob.glob(os.path.join(memory_dir, "*.example.md"))
+    for ex_path in sorted(example_files):
+        filename = os.path.basename(ex_path)
+        target_name = filename.replace(".example.md", ".md")
+        target_path = os.path.join(memory_dir, target_name)
+        rel_target = os.path.relpath(target_path, repo_root)
+        if not os.path.exists(target_path) or force:
+            shutil.copyfile(ex_path, target_path)
+            created.append(rel_target)
+        else:
+            skipped.append(rel_target)
+
+    output = {
+        "status": "ok",
+        "created": created,
+        "skipped": skipped,
+        "server": {
+            "base_url": final_url,
+            "universe_name": final_univ,
+        },
+        "directories": ["runtime/memory", "runtime/screenshots"],
+    }
+
+    lines = ["[INIT] Initializing OGame Agent environment..."]
+    for c in created:
+        if c == rel_server:
+            lines.append(f"  [OK] Configured {c} (base_url: {final_url})")
+        else:
+            lines.append(f"  [OK] Created {c}")
+    for s in skipped:
+        lines.append(f"  [SKIP] {s} already exists (use --force or --url to update)")
+    lines.append("")
+    lines.append("Initialization complete!")
+    lines.append(f"  Active server URL: {final_url}")
+    if final_univ:
+        lines.append(f"  Active universe:   {final_univ}")
+    lines.append("Next steps:")
+    lines.append("  1. In Chrome: enable 'View' -> 'Developer' -> 'Allow JavaScript from Apple Events'.")
+    lines.append("  2. In Chrome: log into your OGame universe account.")
+    lines.append("  3. Verify connection: python3 scripts/ogame_ctl.py matrix")
+
+    print_command_output(args, output, "\n".join(lines))
+    return output

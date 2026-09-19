@@ -129,6 +129,7 @@ command_commit_patrol = _lifecycle.command_commit_patrol
 command_patrol_step = _lifecycle.command_patrol_step
 command_patrol_audit = _lifecycle.command_patrol_audit
 command_record_tokens = _lifecycle.command_record_tokens
+command_init = _lifecycle.command_init
 
 # =============================================================================
 # Matrix & Empire Functions
