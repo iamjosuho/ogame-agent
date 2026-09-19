@@ -1,0 +1,28 @@
+schema_version = 1
+
+[strategy]
+policy_version = "2026-09-14.2"
+profile = "default_farmer"
+
+[power_squeeze]
+enabled = true
+surplus_threshold = 30
+target_energy = 0
+preferred_economy_actions = ["metal_mine", "deuterium_synthesizer", "crystal_mine"]
+
+[growth]
+colonization_cycle_enabled = true
+preferred_colony_position = 8
+scan_radius = 2
+max_candidates = 2
+
+[logistics]
+enabled = true
+minimum_transport_amount = 1000
+maximum_transport_per_resource = 10000
+
+[farming]
+enabled = true
+minimum_raid_loot = 5000
+max_targets = 10
+max_concurrent_raids = 2

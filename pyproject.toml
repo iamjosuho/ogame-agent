@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ogame-agent"
+version = "0.1.0"
+description = "An experimental AI agent that autonomously manages an OGame account"
+readme = "README.md"
+license = { text = "GPL-3.0-only" }
+requires-python = ">=3.11"
+authors = [
+    { name = "iamjosuho", email = "273535632+iamjosuho@users.noreply.github.com" }
+]
+keywords = ["ogame", "ai-agent", "llm", "automation", "game-bot"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/iamjosuho/ogame-agent"
+Repository = "https://github.com/iamjosuho/ogame-agent"
+
+[tool.setuptools.packages.find]
+where = ["scripts"]

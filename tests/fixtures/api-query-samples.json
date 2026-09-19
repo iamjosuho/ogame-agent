@@ -1,0 +1,439 @@
+{
+  "captured_at": 1788018390,
+  "captured_count": 0,
+  "planet_id": "12345679",
+  "samples": [
+    {
+      "captured": false,
+      "component": "supplies",
+      "label": "metal_mine_detail",
+      "observed_via": "natural browser navigation; detail data was server-rendered without fetch/xhr",
+      "reason": "沒有取得可驗證的唯讀 response",
+      "replay": {
+        "attempted": false
+      },
+      "resource_entries": [
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/resourcesbar.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/retrieveEmail.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologydetails.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologytree.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "img",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/cdn/img/layout/pixel.gif"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "css",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/headerCache/supplies/normal_1_2_3_4_12_212.jpg"
+        },
+        {
+          "duration_ms": 324,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 1499,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=chat&asJson=1"
+        },
+        {
+          "duration_ms": 866,
+          "initiator_type": "script",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/socket.io.js"
+        },
+        {
+          "duration_ms": 314,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 462,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=fetchEventBox&asJson=1"
+        },
+        {
+          "duration_ms": 324,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 4105,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=catchEvents&ajax=1"
+        },
+        {
+          "duration_ms": 310,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 645,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=ipimenu&action=exportMenuContent&ajax=1"
+        },
+        {
+          "duration_ms": 292,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1EClPS"
+        },
+        {
+          "duration_ms": 292,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1EClU1&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 587,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1EClU1.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 290,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECldD&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 292,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECldD.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 384,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1EClhn&sid=%5BREDACTED%5D"
+        }
+      ],
+      "tech_id": 1,
+      "trace": {
+        "request": {
+          "body": "",
+          "headers": {
+            "cookie": "[REDACTED]"
+          },
+          "method": "GET",
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=supplies&cp=12345679"
+        },
+        "response": {
+          "schema": {
+            "kind": "text",
+            "length": 0,
+            "tags": []
+          }
+        },
+        "transport": "navigation"
+      }
+    },
+    {
+      "captured": false,
+      "component": "facilities",
+      "label": "robotics_factory_detail",
+      "observed_via": "natural browser navigation; detail data was server-rendered without fetch/xhr",
+      "reason": "沒有取得可驗證的唯讀 response",
+      "replay": {
+        "attempted": false
+      },
+      "resource_entries": [
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/resourcesbar.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/retrieveEmail.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologydetails.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologytree.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "img",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/cdn/img/layout/pixel.gif"
+        },
+        {
+          "duration_ms": 1,
+          "initiator_type": "css",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/headerCache/facilities/normal_14_21_31.jpg"
+        },
+        {
+          "duration_ms": 313,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 1499,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=chat&asJson=1"
+        },
+        {
+          "duration_ms": 293,
+          "initiator_type": "script",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/socket.io.js"
+        },
+        {
+          "duration_ms": 307,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 462,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=fetchEventBox&asJson=1"
+        },
+        {
+          "duration_ms": 316,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 4105,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=catchEvents&ajax=1"
+        },
+        {
+          "duration_ms": 306,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 645,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=ipimenu&action=exportMenuContent&ajax=1"
+        },
+        {
+          "duration_ms": 867,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1EConJ"
+        },
+        {
+          "duration_ms": 871,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECooy"
+        },
+        {
+          "duration_ms": 292,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECo-s&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 293,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECo-s.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 288,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp0Z&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 474,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp0Z.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 293,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp3S&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 391,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp3S.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 291,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp7-&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 294,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp7-.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 580,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECp9Z&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 1263,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECpCa&sid=%5BREDACTED%5D"
+        }
+      ],
+      "tech_id": 14,
+      "trace": {
+        "request": {
+          "body": "",
+          "headers": {
+            "cookie": "[REDACTED]"
+          },
+          "method": "GET",
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=facilities&cp=12345679"
+        },
+        "response": {
+          "schema": {
+            "kind": "text",
+            "length": 0,
+            "tags": []
+          }
+        },
+        "transport": "navigation"
+      }
+    },
+    {
+      "captured": false,
+      "component": "research",
+      "label": "astrophysics_detail",
+      "observed_via": "natural browser navigation; detail data was server-rendered without fetch/xhr",
+      "reason": "沒有取得可驗證的唯讀 response",
+      "replay": {
+        "attempted": false
+      },
+      "resource_entries": [
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/resourcesbar.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/retrieveEmail.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologydetails.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "link",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/assets/css/technologytree.css"
+        },
+        {
+          "duration_ms": 0,
+          "initiator_type": "img",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com/cdn/img/layout/pixel.gif"
+        },
+        {
+          "duration_ms": 315,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 1499,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=chat&asJson=1"
+        },
+        {
+          "duration_ms": 888,
+          "initiator_type": "script",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/socket.io.js"
+        },
+        {
+          "duration_ms": 309,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 463,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=fetchEventBox&asJson=1"
+        },
+        {
+          "duration_ms": 314,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 4105,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=eventlist&action=catchEvents&ajax=1"
+        },
+        {
+          "duration_ms": 309,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 645,
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=ipimenu&action=exportMenuContent&ajax=1"
+        },
+        {
+          "duration_ms": 308,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsE-"
+        },
+        {
+          "duration_ms": 291,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsJo&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 309,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsJo.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 295,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsOe&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 295,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsOe.0&sid=%5BREDACTED%5D"
+        },
+        {
+          "duration_ms": 708,
+          "initiator_type": "xmlhttprequest",
+          "transfer_size": 0,
+          "url": "https://s1-en.ogame.gameforge.com:24412/socket.io/?EIO=4&transport=polling&t=Q1ECsTF&sid=%5BREDACTED%5D"
+        }
+      ],
+      "tech_id": 124,
+      "trace": {
+        "request": {
+          "body": "",
+          "headers": {
+            "cookie": "[REDACTED]"
+          },
+          "method": "GET",
+          "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=ingame&component=research&cp=12345679"
+        },
+        "response": {
+          "schema": {
+            "kind": "text",
+            "length": 0,
+            "tags": []
+          }
+        },
+        "transport": "navigation"
+      }
+    }
+  ],
+  "sanitization": "credentials and session/CSRF/token values redacted; no raw trace persisted",
+  "scope": "natural economy/technology detail queries",
+  "version": 1
+}

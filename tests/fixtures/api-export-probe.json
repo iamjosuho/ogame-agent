@@ -1,0 +1,3521 @@
+{
+  "active_planet_before": "12345678",
+  "active_planet_during": "12345679",
+  "available_count": 4,
+  "captured_at": 1788613427,
+  "endpoints": [
+    {
+      "action": "speciesBonuses",
+      "duration_ms": 393,
+      "request": {
+        "has_cp_parameter": false,
+        "headers": {
+          "Accept": "application/json",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "method": "GET",
+        "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=speciesBonuses&asJson=1"
+      },
+      "response": {
+        "available": true,
+        "content_type": "text/html; charset=utf-8",
+        "data": {
+          "components": [],
+          "data": {
+            "characterclasses": {
+              "601": {
+                "details": [
+                  {
+                    "name": "增加產量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_RESOURCE_NAME",
+                    "withBonus": "包括加成：25%",
+                    "withBonusValue": "25%",
+                    "withoutBonus": "基本加成：25%",
+                    "withoutBonusValue": "25%"
+                  },
+                  {
+                    "name": "增加能量產量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_ENERGY_NAME",
+                    "withBonus": "包括加成：10%",
+                    "withBonusValue": "10%",
+                    "withoutBonus": "基本加成：10%",
+                    "withoutBonusValue": "10%"
+                  },
+                  {
+                    "name": "更多的履帶車獎勵",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_RESOURCE_BUGGY_NAME",
+                    "withBonus": "包括加成：50%",
+                    "withBonusValue": "50%",
+                    "withoutBonus": "基本加成：50%",
+                    "withoutBonusValue": "50%"
+                  },
+                  {
+                    "name": "高速運輸船",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_TRADINGSHIP_SPEED_NAME",
+                    "withBonus": "包括加成：100%",
+                    "withBonusValue": "100%",
+                    "withoutBonus": "基本加成：100%",
+                    "withoutBonusValue": "100%"
+                  },
+                  {
+                    "name": "擴大的貨艙容量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_TRADINGSHIP_CARGO_CAPACITY_NAME",
+                    "withBonus": "包括加成：25%",
+                    "withBonusValue": "25%",
+                    "withoutBonus": "基本加成：25%",
+                    "withoutBonusValue": "25%"
+                  },
+                  {
+                    "name": "增加最大履帶車（地質學家）數量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_MAX_BUGGY_NAME",
+                    "withBonus": "包括加成：10%",
+                    "withBonusValue": "10%",
+                    "withoutBonus": "基本加成：10%",
+                    "withoutBonusValue": "10%"
+                  }
+                ],
+                "maximumBonusTime": null,
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "characterClass": 0
+                }
+              },
+              "602": {
+                "details": [
+                  {
+                    "name": "更快捷的戰鬥艦船",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_COMBATSHIP_SPEED_NAME",
+                    "withBonus": "包括加成：100%",
+                    "withBonusValue": "100%",
+                    "withoutBonus": "基本加成：100%",
+                    "withoutBonusValue": "100%"
+                  },
+                  {
+                    "name": "高速型回收船",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_RECYCLER_SPEED_NAME",
+                    "withBonus": "包括加成：100%",
+                    "withBonusValue": "100%",
+                    "withoutBonus": "基本加成：100%",
+                    "withoutBonusValue": "100%"
+                  },
+                  {
+                    "name": "擴大的貨艙容量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_RECYCLING_CARGO_CAPACITY_NAME",
+                    "withBonus": "包括加成：20%",
+                    "withBonusValue": "20%",
+                    "withoutBonus": "基本加成：20%",
+                    "withoutBonusValue": "20%"
+                  },
+                  {
+                    "name": "經濟艦船",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_FUEL_CONSUMPTION_NAME",
+                    "withBonus": "包括加成：42%",
+                    "withBonusValue": "42%",
+                    "withoutBonus": "基本加成：42%",
+                    "withoutBonusValue": "42%"
+                  },
+                  {
+                    "name": "更多戰鬥科技等級",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_COMBAT_RESEARCH_NAME",
+                    "withBonus": "包括加成：2",
+                    "withBonusValue": 2,
+                    "withoutBonus": "基本加成：2",
+                    "withoutBonusValue": 2
+                  },
+                  {
+                    "name": "額外的艦隊指揮權數",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_FLEET_SLOT_NAME",
+                    "withBonus": "包括加成：2",
+                    "withBonusValue": 2,
+                    "withoutBonus": "基本加成：2",
+                    "withoutBonusValue": 2
+                  },
+                  {
+                    "name": "額外月球帶",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_MOON_FIELD_NAME",
+                    "withBonus": "包括加成：5",
+                    "withBonusValue": 5,
+                    "withoutBonus": "基本加成：5",
+                    "withoutBonusValue": 5
+                  }
+                ],
+                "maximumBonusTime": null,
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "characterClass": 0
+                }
+              },
+              "603": {
+                "details": [
+                  {
+                    "name": "科研獎勵",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_RESEARCH_NAME",
+                    "withBonus": "包括加成：25%",
+                    "withBonusValue": "25%",
+                    "withoutBonus": "基本加成：25%",
+                    "withoutBonusValue": "25%"
+                  },
+                  {
+                    "name": "遠征獎勵",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_EXPEDITION_NAME",
+                    "withBonus": "包括加成：750%",
+                    "withBonusValue": "750%",
+                    "withoutBonus": "基本加成：750%",
+                    "withoutBonusValue": "750%"
+                  },
+                  {
+                    "name": "行星大小",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_COLONIZATION_NAME",
+                    "withBonus": "包括加成：10%",
+                    "withBonusValue": "10%",
+                    "withoutBonus": "基本加成：10%",
+                    "withoutBonusValue": "10%"
+                  },
+                  {
+                    "name": "更多遠征艦隊",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_EXPEDITION_SLOT_NAME",
+                    "withBonus": "包括加成：2",
+                    "withBonusValue": 2,
+                    "withoutBonus": "基本加成：2",
+                    "withoutBonusValue": 2
+                  },
+                  {
+                    "name": "減少遠征敵人數量",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_EXPEDITION_ENEMY_REDUCTION_NAME",
+                    "withBonus": "包括加成：50%",
+                    "withBonusValue": "50%",
+                    "withoutBonus": "基本加成：50%",
+                    "withoutBonusValue": "50%"
+                  },
+                  {
+                    "name": "增加感應陣列範圍",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_PHALANX_RANGE_NAME",
+                    "withBonus": "包括加成：20%",
+                    "withBonusValue": "20%",
+                    "withoutBonus": "基本加成：20%",
+                    "withoutBonusValue": "20%"
+                  },
+                  {
+                    "name": "增加不活動戰利品",
+                    "nameKey": "LOCA_CHARACTER_CLASS_BONUS_PLUNDER_INACTIVE_NAME",
+                    "withBonus": "包括加成：75%",
+                    "withBonusValue": "75%",
+                    "withoutBonus": "基本加成：75%",
+                    "withoutBonusValue": "75%"
+                  }
+                ],
+                "maximumBonusTime": null,
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "characterClass": 0
+                }
+              }
+            },
+            "costreduction": {
+              "106": {
+                "maximumBonusCost": 0.5,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0.001008,
+                    "time": 0.0030239999999999998
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11204": {
+                      "cost": 0.001008,
+                      "quantity": 1,
+                      "time": 0.002016
+                    },
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0.001008,
+                  "time": 0.0030239999999999998
+                }
+              },
+              "108": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "109": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "110": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "111": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "11201": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "113": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "114": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "115": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "117": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "118": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "120": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "121": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "122": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "123": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "124": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              },
+              "199": {
+                "maximumBonusCost": null,
+                "maximumBonusTime": 0.99,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "cost": 0,
+                    "time": 0.001008
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11206": {
+                      "cost": 0,
+                      "quantity": 1,
+                      "time": 0.001008
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "cost": 0,
+                  "time": 0.001008
+                }
+              }
+            },
+            "defenses": {
+              "401": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "402": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "403": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "404": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "405": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "406": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "407": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              },
+              "408": {
+                "spaceObjectBonus": [],
+                "technologyBonus": [],
+                "totalBonus": {
+                  "armor": 0,
+                  "shield": 0,
+                  "weapon": 0
+                }
+              }
+            },
+            "expedition": {
+              "FleetLostReducer": {
+                "maximumBonusFuel": 0.5,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "FleetLostReducer": 0.0005015
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14203": {
+                      "FleetLostReducer": 0.0005015,
+                      "quantity": 1
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "FleetLostReducer": 0.0005015
+                }
+              },
+              "ShipResultBooster": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "ShipResultBooster": 0.002006
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14204": {
+                      "ShipResultBooster": 0.002006,
+                      "quantity": 1
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "ShipResultBooster": 0.002006
+                }
+              }
+            },
+            "misc": {
+              "discoveryBonus": {
+                "maximumBonus": null,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "discoveryBonus": 0.04032
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11201": {
+                      "discoveryBonus": 0.04032,
+                      "quantity": 4
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "discoveryBonus": 0.04032
+                }
+              }
+            },
+            "resources": {
+              "crystal": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "crystal": 0.0012096
+                  },
+                  "12345680": {
+                    "crystal": 0.0016048
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11202": {
+                      "crystal": 0.0012096,
+                      "quantity": 2
+                    }
+                  },
+                  "12345680": {
+                    "12202": {
+                      "crystal": 0.0016048,
+                      "quantity": 2
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "crystal": 0.0028144
+                }
+              },
+              "deuterium": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "deuterium": 0.0012096
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11202": {
+                      "deuterium": 0.0012096,
+                      "quantity": 2
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "deuterium": 0.0012096
+                }
+              },
+              "energy": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345681": {
+                    "energy": 0.005
+                  }
+                },
+                "technologyBonus": {
+                  "12345681": {
+                    "12201": {
+                      "energy": 0.005,
+                      "quantity": 2
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "energy": 0.005
+                }
+              },
+              "metal": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "metal": 0.0012096
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11202": {
+                      "metal": 0.0012096,
+                      "quantity": 2
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "metal": 0.0012096
+                }
+              },
+              "storage": {
+                "maximumBonusFuel": null,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "crystal": 0.08064,
+                    "deuterium": 0.08064,
+                    "food": 0,
+                    "metal": 0.08064,
+                    "population": 0,
+                    "storage": 0.08064
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11205": {
+                      "crystal": 0.08064,
+                      "deuterium": 0.08064,
+                      "food": 0,
+                      "metal": 0.08064,
+                      "population": 0,
+                      "quantity": 2,
+                      "storage": 0.08064
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "storage": 0.08064
+                }
+              }
+            },
+            "ships": {
+              "202": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0,
+                    "shield": 0,
+                    "speed": 0.01008,
+                    "weapon": 0
+                  },
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11203": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0,
+                      "quantity": 2,
+                      "shield": 0,
+                      "speed": 0.01008,
+                      "weapon": 0
+                    }
+                  },
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0.01008,
+                  "weapon": 0
+                }
+              },
+              "203": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0,
+                    "shield": 0,
+                    "speed": 0.01008,
+                    "weapon": 0
+                  },
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11203": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0,
+                      "quantity": 2,
+                      "shield": 0,
+                      "speed": 0.01008,
+                      "weapon": 0
+                    }
+                  },
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0.01008,
+                  "weapon": 0
+                }
+              },
+              "204": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "205": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "206": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "207": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "208": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0,
+                    "shield": 0,
+                    "speed": 0.01008,
+                    "weapon": 0
+                  },
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11203": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0,
+                      "quantity": 2,
+                      "shield": 0,
+                      "speed": 0.01008,
+                      "weapon": 0
+                    }
+                  },
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0.01008,
+                  "weapon": 0
+                }
+              },
+              "209": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0,
+                    "shield": 0,
+                    "speed": 0.01008,
+                    "weapon": 0
+                  },
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11203": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0,
+                      "quantity": 2,
+                      "shield": 0,
+                      "speed": 0.01008,
+                      "weapon": 0
+                    }
+                  },
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0.01008,
+                  "weapon": 0
+                }
+              },
+              "210": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345679": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0,
+                    "shield": 0,
+                    "speed": 0.01008,
+                    "weapon": 0
+                  },
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345679": {
+                    "11203": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0,
+                      "quantity": 2,
+                      "shield": 0,
+                      "speed": 0.01008,
+                      "weapon": 0
+                    }
+                  },
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0.01008,
+                  "weapon": 0
+                }
+              },
+              "211": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "213": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "214": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "215": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "218": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              },
+              "219": {
+                "maximumBonusFuel": 0.3,
+                "spaceObjectBonus": {
+                  "12345680": {
+                    "armor": 0,
+                    "cargo": 0,
+                    "fuel": 0.00030089999999999994,
+                    "shield": 0,
+                    "speed": 0,
+                    "weapon": 0
+                  }
+                },
+                "technologyBonus": {
+                  "12345680": {
+                    "14201": {
+                      "armor": 0,
+                      "cargo": 0,
+                      "fuel": 0.00030089999999999994,
+                      "quantity": 1,
+                      "shield": 0,
+                      "speed": 0,
+                      "weapon": 0
+                    }
+                  }
+                },
+                "totalBonus": {
+                  "armor": 0,
+                  "cargo": 0,
+                  "fuel": 0.00030089999999999994,
+                  "shield": 0,
+                  "speed": 0,
+                  "weapon": 0
+                }
+              }
+            }
+          },
+          "newAjaxToken": "[REDACTED]",
+          "speciesInformation": [
+            {
+              "bonus": 0.008,
+              "id": 1,
+              "level": 8,
+              "xp": 5249,
+              "xpToNextLevel": 8100
+            },
+            {
+              "bonus": 0.003,
+              "id": 4,
+              "level": 3,
+              "xp": 598,
+              "xpToNextLevel": 3600
+            },
+            {
+              "bonus": 0.005,
+              "id": 3,
+              "level": 5,
+              "xp": 1935,
+              "xpToNextLevel": 5400
+            },
+            {
+              "bonus": 0,
+              "id": 2,
+              "level": 0,
+              "xp": 0,
+              "xpToNextLevel": 900
+            }
+          ],
+          "static": {
+            "categories": {
+              "characterclasses": "角色類型加成",
+              "costreduction": "成本和時間減少",
+              "defenses": "防禦加成",
+              "expedition": "天體物理學技術",
+              "misc": "其它",
+              "resources": "資源加成",
+              "ships": "船艦加成"
+            },
+            "expedition": {
+              "DMBooster": "暗物質發現獎勵",
+              "EnemyReducer": "減少敵方接觸",
+              "FleetLostReducer": "減少艦隊損失",
+              "ResultBooster": "資源發現獎勵",
+              "ShipResultBooster": "沉船金額獎勵",
+              "SpeedBooster": "增加飛行速度"
+            },
+            "misc": {
+              "buggyBonus": "履帶車加成",
+              "discoveryBonus": "探索飛行艦隊速度加成",
+              "fuelPayback": "艦隊召回重氫退款加成",
+              "phalanxRangeBoost": "感應陣列範圍加成"
+            },
+            "resources": {
+              "crystal": "晶體",
+              "deuterium": "重氫",
+              "energy": "能源",
+              "food": "食物",
+              "metal": "金屬",
+              "population": "人口",
+              "storage": "儲存容量"
+            },
+            "spaceObjects": {
+              "12345678": {
+                "coords": "[1:1:1]",
+                "id": 12345678,
+                "name": "Homeworld"
+              },
+              "12345679": {
+                "coords": "[1:1:2]",
+                "id": 12345679,
+                "name": "Colony1"
+              },
+              "12345680": {
+                "coords": "[1:1:3]",
+                "id": 12345680,
+                "name": "Colony2"
+              },
+              "12345681": {
+                "coords": "[1:1:4]",
+                "id": 12345681,
+                "name": "Colony3"
+              },
+              "12345682": {
+                "coords": "[1:1:5]",
+                "id": 12345682,
+                "name": "Colony4"
+              }
+            },
+            "technologies": {
+              "-200": {
+                "id": -200,
+                "name": "生命形式發展。\n\n",
+                "qualified_name": "lifeformtech11201",
+                "qualified_type": "lifeform",
+                "slot": null
+              },
+              "1": {
+                "id": 1,
+                "name": "金屬礦",
+                "qualified_name": "metalMine",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "106": {
+                "id": 106,
+                "name": "間諜偵察技術",
+                "qualified_name": "espionageTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "108": {
+                "id": 108,
+                "name": "電腦技術",
+                "qualified_name": "computerTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "109": {
+                "id": 109,
+                "name": "武器技術",
+                "qualified_name": "weaponsTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "110": {
+                "id": 110,
+                "name": "防禦盾技術",
+                "qualified_name": "shieldingTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "111": {
+                "id": 111,
+                "name": "裝甲技術",
+                "qualified_name": "armorTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "11201": {
+                "id": 11201,
+                "name": "星際使者",
+                "qualified_name": "lifeformTech11201",
+                "qualified_type": "lifeform",
+                "slot": 1
+              },
+              "11202": {
+                "id": 11202,
+                "name": "高性能提取器",
+                "qualified_name": "lifeformTech11202",
+                "qualified_type": "lifeform",
+                "slot": 2
+              },
+              "11203": {
+                "id": 11203,
+                "name": "聚變驅動器",
+                "qualified_name": "lifeformTech11203",
+                "qualified_type": "lifeform",
+                "slot": 3
+              },
+              "11204": {
+                "id": 11204,
+                "name": "隱形磁場發生器",
+                "qualified_name": "lifeformTech11204",
+                "qualified_type": "lifeform",
+                "slot": 4
+              },
+              "11205": {
+                "id": 11205,
+                "name": "軌道窩點",
+                "qualified_name": "lifeformTech11205",
+                "qualified_type": "lifeform",
+                "slot": 5
+              },
+              "11206": {
+                "id": 11206,
+                "name": "研 AI",
+                "qualified_name": "lifeformTech11206",
+                "qualified_type": "lifeform",
+                "slot": 6
+              },
+              "11207": {
+                "id": 11207,
+                "name": "高性能地形改造器",
+                "qualified_name": "lifeformTech11207",
+                "qualified_type": "lifeform",
+                "slot": 7
+              },
+              "11208": {
+                "id": 11208,
+                "name": "強化生產科技",
+                "qualified_name": "lifeformTech11208",
+                "qualified_type": "lifeform",
+                "slot": 8
+              },
+              "11209": {
+                "id": 11209,
+                "name": "輕型戰鬥機 Mk II",
+                "qualified_name": "lifeformTech11209",
+                "qualified_type": "lifeform",
+                "slot": 9
+              },
+              "11210": {
+                "id": 11210,
+                "name": "巡洋艦 Mk II",
+                "qualified_name": "lifeformTech11210",
+                "qualified_type": "lifeform",
+                "slot": 10
+              },
+              "11211": {
+                "id": 11211,
+                "name": "改進型實驗室技術",
+                "qualified_name": "lifeformTech11211",
+                "qualified_type": "lifeform",
+                "slot": 11
+              },
+              "11212": {
+                "id": 11212,
+                "name": "等離子體地形改造器",
+                "qualified_name": "lifeformTech11212",
+                "qualified_type": "lifeform",
+                "slot": 12
+              },
+              "11213": {
+                "id": 11213,
+                "name": "低溫驅動器",
+                "qualified_name": "lifeformTech11213",
+                "qualified_type": "lifeform",
+                "slot": 13
+              },
+              "11214": {
+                "id": 11214,
+                "name": "轟炸機 Mk II",
+                "qualified_name": "lifeformTech11214",
+                "qualified_type": "lifeform",
+                "slot": 14
+              },
+              "11215": {
+                "id": 11215,
+                "name": "驅逐艦 Mk II",
+                "qualified_name": "lifeformTech11215",
+                "qualified_type": "lifeform",
+                "slot": 15
+              },
+              "11216": {
+                "id": 11216,
+                "name": "戰鬥巡洋艦 Mk II",
+                "qualified_name": "lifeformTech11216",
+                "qualified_type": "lifeform",
+                "slot": 16
+              },
+              "11217": {
+                "id": 11217,
+                "name": "機器人助手",
+                "qualified_name": "lifeformTech11217",
+                "qualified_type": "lifeform",
+                "slot": 17
+              },
+              "11218": {
+                "id": 11218,
+                "name": "超級計算機",
+                "qualified_name": "lifeformTech11218",
+                "qualified_type": "lifeform",
+                "slot": 18
+              },
+              "113": {
+                "id": 113,
+                "name": "能源技術",
+                "qualified_name": "energyTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "114": {
+                "id": 114,
+                "name": "超空間科技",
+                "qualified_name": "hyperspaceTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "115": {
+                "id": 115,
+                "name": "燃燒引擎",
+                "qualified_name": "combustionDriveTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "117": {
+                "id": 117,
+                "name": "脈衝引擎",
+                "qualified_name": "impulseDriveTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "118": {
+                "id": 118,
+                "name": "超空間引擎",
+                "qualified_name": "hyperspaceDriveTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "12": {
+                "id": 12,
+                "name": "核融合反應器",
+                "qualified_name": "fusionPlant",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "120": {
+                "id": 120,
+                "name": "雷射技術",
+                "qualified_name": "laserTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "121": {
+                "id": 121,
+                "name": "離子技術",
+                "qualified_name": "ionTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "122": {
+                "id": 122,
+                "name": "電漿技術",
+                "qualified_name": "plasmaTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "12201": {
+                "id": 12201,
+                "name": "火山電池",
+                "qualified_name": "lifeformTech12201",
+                "qualified_type": "lifeform",
+                "slot": 1
+              },
+              "12202": {
+                "id": 12202,
+                "name": "聲波掃描",
+                "qualified_name": "lifeformTech12202",
+                "qualified_type": "lifeform",
+                "slot": 2
+              },
+              "12203": {
+                "id": 12203,
+                "name": "高能泵系統",
+                "qualified_name": "lifeformTech12203",
+                "qualified_type": "lifeform",
+                "slot": 3
+              },
+              "12204": {
+                "id": 12204,
+                "name": "貨艙擴展（民用飛船）",
+                "qualified_name": "lifeformTech12204",
+                "qualified_type": "lifeform",
+                "slot": 4
+              },
+              "12205": {
+                "id": 12205,
+                "name": "岩漿動力生產",
+                "qualified_name": "lifeformTech12205",
+                "qualified_type": "lifeform",
+                "slot": 5
+              },
+              "12206": {
+                "id": 12206,
+                "name": "地熱發電廠",
+                "qualified_name": "lifeformTech12206",
+                "qualified_type": "lifeform",
+                "slot": 6
+              },
+              "12207": {
+                "id": 12207,
+                "name": "回聲測深",
+                "qualified_name": "lifeformTech12207",
+                "qualified_type": "lifeform",
+                "slot": 7
+              },
+              "12208": {
+                "id": 12208,
+                "name": "離子晶體強化（重型戰鬥機）",
+                "qualified_name": "lifeformTech12208",
+                "qualified_type": "lifeform",
+                "slot": 8
+              },
+              "12209": {
+                "id": 12209,
+                "name": "升級版恆星探測器",
+                "qualified_name": "lifeformTech12209",
+                "qualified_type": "lifeform",
+                "slot": 9
+              },
+              "12210": {
+                "id": 12210,
+                "name": "強化金剛石鑽頭",
+                "qualified_name": "lifeformTech12210",
+                "qualified_type": "lifeform",
+                "slot": 10
+              },
+              "12211": {
+                "id": 12211,
+                "name": "地震採礦技術",
+                "qualified_name": "lifeformTech12211",
+                "qualified_type": "lifeform",
+                "slot": 11
+              },
+              "12212": {
+                "id": 12212,
+                "name": "岩漿動力泵系統",
+                "qualified_name": "lifeformTech12212",
+                "qualified_type": "lifeform",
+                "slot": 12
+              },
+              "12213": {
+                "id": 12213,
+                "name": "離子晶體模組",
+                "qualified_name": "lifeformTech12213",
+                "qualified_type": "lifeform",
+                "slot": 13
+              },
+              "12214": {
+                "id": 12214,
+                "name": "優化導彈發射井建築方法",
+                "qualified_name": "lifeformTech12214",
+                "qualified_type": "lifeform",
+                "slot": 14
+              },
+              "12215": {
+                "id": 12215,
+                "name": "鑽石能量發射器",
+                "qualified_name": "lifeformTech12215",
+                "qualified_type": "lifeform",
+                "slot": 15
+              },
+              "12216": {
+                "id": 12216,
+                "name": "黑曜石護盾強化",
+                "qualified_name": "lifeformTech12216",
+                "qualified_type": "lifeform",
+                "slot": 16
+              },
+              "12217": {
+                "id": 12217,
+                "name": "符文護盾",
+                "qualified_name": "lifeformTech12217",
+                "qualified_type": "lifeform",
+                "slot": 17
+              },
+              "12218": {
+                "id": 12218,
+                "name": "洛克塔採礦師強化",
+                "qualified_name": "lifeformTech12218",
+                "qualified_type": "lifeform",
+                "slot": 18
+              },
+              "123": {
+                "id": 123,
+                "name": "星際研究網路",
+                "qualified_name": "researchNetworkTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "124": {
+                "id": 124,
+                "name": "天體物理學",
+                "qualified_name": "astrophysicsTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "13201": {
+                "id": 13201,
+                "name": "催化技術",
+                "qualified_name": "lifeformTech13201",
+                "qualified_type": "lifeform",
+                "slot": 1
+              },
+              "13202": {
+                "id": 13202,
+                "name": "等離子體驅動器",
+                "qualified_name": "lifeformTech13202",
+                "qualified_type": "lifeform",
+                "slot": 2
+              },
+              "13203": {
+                "id": 13203,
+                "name": "效率模組",
+                "qualified_name": "lifeformTech13203",
+                "qualified_type": "lifeform",
+                "slot": 3
+              },
+              "13204": {
+                "id": 13204,
+                "name": "太空站 AI 機器人",
+                "qualified_name": "lifeformTech13204",
+                "qualified_type": "lifeform",
+                "slot": 4
+              },
+              "13205": {
+                "id": 13205,
+                "name": "大修（輕型戰鬥機）",
+                "qualified_name": "lifeformTech13205",
+                "qualified_type": "lifeform",
+                "slot": 5
+              },
+              "13206": {
+                "id": 13206,
+                "name": "自動化運輸線路\n",
+                "qualified_name": "lifeformTech13206",
+                "qualified_type": "lifeform",
+                "slot": 6
+              },
+              "13207": {
+                "id": 13207,
+                "name": "升級版無人機 AI",
+                "qualified_name": "lifeformTech13207",
+                "qualified_type": "lifeform",
+                "slot": 7
+              },
+              "13208": {
+                "id": 13208,
+                "name": "實驗回收技術\n",
+                "qualified_name": "lifeformTech13208",
+                "qualified_type": "lifeform",
+                "slot": 8
+              },
+              "13209": {
+                "id": 13209,
+                "name": "大修（巡洋艦）",
+                "qualified_name": "lifeformTech13209",
+                "qualified_type": "lifeform",
+                "slot": 9
+              },
+              "13210": {
+                "id": 13210,
+                "name": "「彈弓」自動駕駛儀",
+                "qualified_name": "lifeformTech13210",
+                "qualified_type": "lifeform",
+                "slot": 10
+              },
+              "13211": {
+                "id": 13211,
+                "name": "高溫超導體",
+                "qualified_name": "lifeformTech13211",
+                "qualified_type": "lifeform",
+                "slot": 11
+              },
+              "13212": {
+                "id": 13212,
+                "name": "大修（戰艦）",
+                "qualified_name": "lifeformTech13212",
+                "qualified_type": "lifeform",
+                "slot": 12
+              },
+              "13213": {
+                "id": 13213,
+                "name": "人工群體智慧",
+                "qualified_name": "lifeformTech13213",
+                "qualified_type": "lifeform",
+                "slot": 13
+              },
+              "13214": {
+                "id": 13214,
+                "name": "大修（戰列巡洋艦）",
+                "qualified_name": "lifeformTech13214",
+                "qualified_type": "lifeform",
+                "slot": 14
+              },
+              "13215": {
+                "id": 13215,
+                "name": "大修（轟炸機）",
+                "qualified_name": "lifeformTech13215",
+                "qualified_type": "lifeform",
+                "slot": 15
+              },
+              "13216": {
+                "id": 13216,
+                "name": "大修（驅逐艦）",
+                "qualified_name": "lifeformTech13216",
+                "qualified_type": "lifeform",
+                "slot": 16
+              },
+              "13217": {
+                "id": 13217,
+                "name": "實驗性武器技術",
+                "qualified_name": "lifeformTech13217",
+                "qualified_type": "lifeform",
+                "slot": 17
+              },
+              "13218": {
+                "id": 13218,
+                "name": "機甲人的將軍增強",
+                "qualified_name": "lifeformTech13218",
+                "qualified_type": "lifeform",
+                "slot": 18
+              },
+              "14": {
+                "id": 14,
+                "name": "機器人工廠",
+                "qualified_name": "roboticsFactory",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "14201": {
+                "id": 14201,
+                "name": "熱量回收\n",
+                "qualified_name": "lifeformTech14201",
+                "qualified_type": "lifeform",
+                "slot": 1
+              },
+              "14202": {
+                "id": 14202,
+                "name": "硫化物過程\n",
+                "qualified_name": "lifeformTech14202",
+                "qualified_type": "lifeform",
+                "slot": 2
+              },
+              "14203": {
+                "id": 14203,
+                "name": "靈能網路\n",
+                "qualified_name": "lifeformTech14203",
+                "qualified_type": "lifeform",
+                "slot": 3
+              },
+              "14204": {
+                "id": 14204,
+                "name": "心靈致動牽引光束\n",
+                "qualified_name": "lifeformTech14204",
+                "qualified_type": "lifeform",
+                "slot": 4
+              },
+              "14205": {
+                "id": 14205,
+                "name": "增強感測器技術\n",
+                "qualified_name": "lifeformTech14205",
+                "qualified_type": "lifeform",
+                "slot": 5
+              },
+              "14206": {
+                "id": 14206,
+                "name": "神經模態壓縮機\n",
+                "qualified_name": "lifeformTech14206",
+                "qualified_type": "lifeform",
+                "slot": 6
+              },
+              "14207": {
+                "id": 14207,
+                "name": "神經介面\n",
+                "qualified_name": "lifeformTech14207",
+                "qualified_type": "lifeform",
+                "slot": 7
+              },
+              "14208": {
+                "id": 14208,
+                "name": "星際分析網路\n",
+                "qualified_name": "lifeformTech14208",
+                "qualified_type": "lifeform",
+                "slot": 8
+              },
+              "14209": {
+                "id": 14209,
+                "name": "超頻（重型戰鬥機）\n",
+                "qualified_name": "lifeformTech14209",
+                "qualified_type": "lifeform",
+                "slot": 9
+              },
+              "14210": {
+                "id": 14210,
+                "name": "心靈致動器\n",
+                "qualified_name": "lifeformTech14210",
+                "qualified_type": "lifeform",
+                "slot": 10
+              },
+              "14211": {
+                "id": 14211,
+                "name": "第六感\n",
+                "qualified_name": "lifeformTech14211",
+                "qualified_type": "lifeform",
+                "slot": 11
+              },
+              "14212": {
+                "id": 14212,
+                "name": "精神調諧器\n",
+                "qualified_name": "lifeformTech14212",
+                "qualified_type": "lifeform",
+                "slot": 12
+              },
+              "14213": {
+                "id": 14213,
+                "name": "高效群體智慧\n",
+                "qualified_name": "lifeformTech14213",
+                "qualified_type": "lifeform",
+                "slot": 13
+              },
+              "14214": {
+                "id": 14214,
+                "name": "超頻（大型貨船）\n",
+                "qualified_name": "lifeformTech14214",
+                "qualified_type": "lifeform",
+                "slot": 14
+              },
+              "14215": {
+                "id": 14215,
+                "name": "引力感測器\n",
+                "qualified_name": "lifeformTech14215",
+                "qualified_type": "lifeform",
+                "slot": 15
+              },
+              "14216": {
+                "id": 14216,
+                "name": "超頻（戰列艦）\n",
+                "qualified_name": "lifeformTech14216",
+                "qualified_type": "lifeform",
+                "slot": 16
+              },
+              "14217": {
+                "id": 14217,
+                "name": "靈能護盾矩陣\n",
+                "qualified_name": "lifeformTech14217",
+                "qualified_type": "lifeform",
+                "slot": 17
+              },
+              "14218": {
+                "id": 14218,
+                "name": "凱雷斯探險家增強",
+                "qualified_name": "lifeformTech14218",
+                "qualified_type": "lifeform",
+                "slot": 18
+              },
+              "15": {
+                "id": 15,
+                "name": "奈米機器人工廠",
+                "qualified_name": "naniteFactory",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "199": {
+                "id": 199,
+                "name": "重子技術",
+                "qualified_name": "gravitonTechnology",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "2": {
+                "id": 2,
+                "name": "晶體礦",
+                "qualified_name": "crystalMine",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "202": {
+                "id": 202,
+                "name": "小型運輸艦",
+                "qualified_name": "transporterSmall",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "203": {
+                "id": 203,
+                "name": "大型運輸艦",
+                "qualified_name": "transporterLarge",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "204": {
+                "id": 204,
+                "name": "輕型戰鬥機",
+                "qualified_name": "fighterLight",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "205": {
+                "id": 205,
+                "name": "重型戰鬥機",
+                "qualified_name": "fighterHeavy",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "206": {
+                "id": 206,
+                "name": "巡洋艦",
+                "qualified_name": "cruiser",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "207": {
+                "id": 207,
+                "name": "戰列艦",
+                "qualified_name": "battleship",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "208": {
+                "id": 208,
+                "name": "殖民船",
+                "qualified_name": "colonyShip",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "209": {
+                "id": 209,
+                "name": "回收船",
+                "qualified_name": "recycler",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "21": {
+                "id": 21,
+                "name": "造船廠",
+                "qualified_name": "shipyard",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "210": {
+                "id": 210,
+                "name": "間諜衛星",
+                "qualified_name": "espionageProbe",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "211": {
+                "id": 211,
+                "name": "導彈艦",
+                "qualified_name": "bomber",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "212": {
+                "id": 212,
+                "name": "太陽能衛星",
+                "qualified_name": "solarSatellite",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "213": {
+                "id": 213,
+                "name": "毀滅者",
+                "qualified_name": "destroyer",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "214": {
+                "id": 214,
+                "name": "死星",
+                "qualified_name": "deathstar",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "215": {
+                "id": 215,
+                "name": "戰鬥巡洋艦",
+                "qualified_name": "interceptor",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "216": {
+                "id": 216,
+                "name": "貿易艦船",
+                "qualified_name": "merchantShip",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "217": {
+                "id": 217,
+                "name": "履帶車",
+                "qualified_name": "resbuggy",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "218": {
+                "id": 218,
+                "name": "惡魔飛船",
+                "qualified_name": "reaper",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "219": {
+                "id": 219,
+                "name": "探路者",
+                "qualified_name": "explorer",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "22": {
+                "id": 22,
+                "name": "金屬儲存器",
+                "qualified_name": "metalStorage",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "220": {
+                "id": 220,
+                "name": "貿易艦船",
+                "qualified_name": "discoveryShip",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "23": {
+                "id": 23,
+                "name": "晶體儲存器",
+                "qualified_name": "crystalStorage",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "24": {
+                "id": 24,
+                "name": "重氫儲存槽",
+                "qualified_name": "deuteriumStorage",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "3": {
+                "id": 3,
+                "name": "重氫合成器",
+                "qualified_name": "deuteriumSynthesizer",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "31": {
+                "id": 31,
+                "name": "研究實驗室",
+                "qualified_name": "researchLaboratory",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "33": {
+                "id": 33,
+                "name": "地形改造器",
+                "qualified_name": "terraformer",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "34": {
+                "id": 34,
+                "name": "聯盟太空站",
+                "qualified_name": "allianceDepot",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "36": {
+                "id": 36,
+                "name": "宇宙港",
+                "qualified_name": "repairDock",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "4": {
+                "id": 4,
+                "name": "太陽能發電廠",
+                "qualified_name": "solarPlant",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "401": {
+                "id": 401,
+                "name": "飛彈發射器",
+                "qualified_name": "rocketLauncher",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "402": {
+                "id": 402,
+                "name": "輕型雷射炮",
+                "qualified_name": "laserCannonLight",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "403": {
+                "id": 403,
+                "name": "重型雷射炮",
+                "qualified_name": "laserCannonHeavy",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "404": {
+                "id": 404,
+                "name": "磁軌炮",
+                "qualified_name": "gaussCannon",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "405": {
+                "id": 405,
+                "name": "離子加農炮",
+                "qualified_name": "ionCannon",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "406": {
+                "id": 406,
+                "name": "電漿炮塔",
+                "qualified_name": "plasmaCannon",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "407": {
+                "id": 407,
+                "name": "小型防護罩",
+                "qualified_name": "shieldDomeSmall",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "408": {
+                "id": 408,
+                "name": "大型防護罩",
+                "qualified_name": "shieldDomeLarge",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "41": {
+                "id": 41,
+                "name": "月球基地",
+                "qualified_name": "moonbase",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "42": {
+                "id": 42,
+                "name": "感應陣列",
+                "qualified_name": "sensorPhalanx",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "43": {
+                "id": 43,
+                "name": "空間跳躍門",
+                "qualified_name": "jumpGate",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "44": {
+                "id": 44,
+                "name": "導彈發射井",
+                "qualified_name": "missileSilo",
+                "qualified_type": "regular",
+                "slot": null
+              },
+              "601": {
+                "id": 601,
+                "name": "採礦師",
+                "qualified_name": "characterClassMiner",
+                "qualified_type": "",
+                "slot": null
+              },
+              "602": {
+                "id": 602,
+                "name": "將軍",
+                "qualified_name": "characterClassWarrior",
+                "qualified_type": "",
+                "slot": null
+              },
+              "603": {
+                "id": 603,
+                "name": "探險家",
+                "qualified_name": "characterClassExplorer",
+                "qualified_type": "",
+                "slot": null
+              }
+            }
+          }
+        },
+        "headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-encoding": "gzip",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sat, 05 Sep 2026 13:03:36 GMT",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "p3p": "CP=\"This is not a P3P policy. It is a ninja, sneaking by Internet Explorer and escaping its iframe at lightning speed.\"",
+          "pragma": "no-cache",
+          "server": "nginx",
+          "vary": "Accept-Encoding",
+          "x-request-id": "9f1e45b12301cb90721b58046c0a00d0"
+        },
+        "reason": null,
+        "response_url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=speciesBonuses&asJson=1",
+        "schema": {
+          "kind": "json",
+          "length": 39552,
+          "shape": {
+            "components": "list",
+            "data": "dict",
+            "newAjaxToken": "str",
+            "speciesInformation": "list",
+            "static": "dict"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "action": "accountInfo",
+      "duration_ms": 427,
+      "request": {
+        "has_cp_parameter": false,
+        "headers": {
+          "Accept": "application/json",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "method": "GET",
+        "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=accountInfo&asJson=1"
+      },
+      "response": {
+        "available": true,
+        "content_type": "text/html; charset=utf-8",
+        "data": {
+          "allianceClassId": null,
+          "characterClassId": 1,
+          "components": [],
+          "moons": [],
+          "newAjaxToken": "[REDACTED]",
+          "officers": {
+            "admiral": true,
+            "commander": true,
+            "engineer": true,
+            "geologist": true,
+            "technocrat": true
+          },
+          "planets": {
+            "12345678": {
+              "baseProduction": {
+                "crystal": 75,
+                "deuterium": 0,
+                "metal": 150
+              },
+              "buffs": [],
+              "buildings": {
+                "1": 18,
+                "12": 9,
+                "14": 8,
+                "15": 0,
+                "2": 18,
+                "21": 7,
+                "22": 6,
+                "23": 5,
+                "24": 5,
+                "3": 15,
+                "31": 4,
+                "33": 0,
+                "34": 1,
+                "36": 4,
+                "4": 18,
+                "41": 0,
+                "42": 0,
+                "43": 0,
+                "44": 1
+              },
+              "defenses": {
+                "401": 30,
+                "402": 20,
+                "403": 20,
+                "404": 1,
+                "405": 1,
+                "406": 0,
+                "407": 1,
+                "408": 0,
+                "502": 0,
+                "503": 0
+              },
+              "galaxy": 1,
+              "id": 12345678,
+              "position": 12,
+              "production": {
+                "crystal": 14213.5340508,
+                "deuterium": 4745.5609108,
+                "metal": 19491.721196
+              },
+              "resources": {
+                "crystal": 18875,
+                "deuterium": 71333,
+                "energy": 687,
+                "food": 0,
+                "metal": 348328,
+                "population": 680
+              },
+              "selectedSpeciesId": 701,
+              "selectedSpeciesTechnologyIds": [
+                11101,
+                11102,
+                11103,
+                11104,
+                11105,
+                11106,
+                11107,
+                11108,
+                11109,
+                11110,
+                11111,
+                11112
+              ],
+              "ships": {
+                "202": 5,
+                "203": 4,
+                "204": 5,
+                "205": 0,
+                "206": 0,
+                "207": 0,
+                "208": 0,
+                "209": 0,
+                "210": 5,
+                "211": 0,
+                "212": 15,
+                "213": 0,
+                "214": 0,
+                "215": 0,
+                "217": 1,
+                "218": 0,
+                "219": 0
+              },
+              "siblingId": 0,
+              "speciesBuildings": {
+                "11101": 5,
+                "11102": 1
+              },
+              "speciesResearches": [],
+              "system": 40
+            },
+            "12345679": {
+              "baseProduction": {
+                "crystal": 75,
+                "deuterium": 0,
+                "metal": 184
+              },
+              "buffs": [],
+              "buildings": {
+                "1": 16,
+                "12": 8,
+                "14": 9,
+                "15": 0,
+                "2": 18,
+                "21": 8,
+                "22": 7,
+                "23": 7,
+                "24": 6,
+                "3": 14,
+                "31": 10,
+                "33": 0,
+                "34": 1,
+                "36": 4,
+                "4": 18,
+                "41": 0,
+                "42": 0,
+                "43": 0,
+                "44": 0
+              },
+              "defenses": {
+                "401": 150,
+                "402": 10,
+                "403": 10,
+                "404": 1,
+                "405": 1,
+                "406": 0,
+                "407": 1,
+                "408": 0,
+                "502": 0,
+                "503": 0
+              },
+              "galaxy": 1,
+              "id": 12345679,
+              "position": 7,
+              "production": {
+                "crystal": 14213.5340508,
+                "deuterium": 3998.5034827999993,
+                "metal": 19603.0308144
+              },
+              "resources": {
+                "crystal": 54069,
+                "deuterium": 20243,
+                "energy": 390,
+                "food": 0,
+                "metal": 395806,
+                "population": 1283579
+              },
+              "selectedSpeciesId": 701,
+              "selectedSpeciesTechnologyIds": [
+                11101,
+                11102,
+                11103,
+                11104,
+                11105,
+                11106,
+                11107,
+                11108,
+                11109,
+                11110,
+                11111,
+                11112,
+                11201,
+                11202,
+                11203,
+                11204,
+                11205,
+                11206
+              ],
+              "ships": {
+                "202": 3,
+                "203": 7,
+                "204": 10,
+                "205": 0,
+                "206": 0,
+                "207": 0,
+                "208": 0,
+                "209": 0,
+                "210": 11,
+                "211": 0,
+                "212": 10,
+                "213": 0,
+                "214": 0,
+                "215": 0,
+                "217": 1,
+                "218": 0,
+                "219": 0
+              },
+              "siblingId": 0,
+              "speciesBuildings": {
+                "11101": 31,
+                "11102": 28,
+                "11103": 2
+              },
+              "speciesResearches": {
+                "11201": 4,
+                "11202": 2,
+                "11203": 2,
+                "11204": 1,
+                "11205": 2,
+                "11206": 1
+              },
+              "system": 40
+            },
+            "12345680": {
+              "baseProduction": {
+                "crystal": 75,
+                "deuterium": 0,
+                "metal": 184
+              },
+              "buffs": [],
+              "buildings": {
+                "1": 17,
+                "12": 8,
+                "14": 8,
+                "15": 0,
+                "2": 18,
+                "21": 8,
+                "22": 7,
+                "23": 6,
+                "24": 5,
+                "3": 15,
+                "31": 6,
+                "33": 0,
+                "34": 0,
+                "36": 4,
+                "4": 20,
+                "41": 0,
+                "42": 0,
+                "43": 0,
+                "44": 2
+              },
+              "defenses": {
+                "401": 100,
+                "402": 10,
+                "403": 10,
+                "404": 0,
+                "405": 0,
+                "406": 0,
+                "407": 1,
+                "408": 0,
+                "502": 0,
+                "503": 0
+              },
+              "galaxy": 1,
+              "id": 12345680,
+              "position": 9,
+              "production": {
+                "crystal": 14213.8342608,
+                "deuterium": 5649.447776,
+                "metal": 22880.5752288
+              },
+              "resources": {
+                "crystal": 46284,
+                "deuterium": 66634,
+                "energy": 412,
+                "food": 0,
+                "metal": 386762,
+                "population": 612868
+              },
+              "selectedSpeciesId": 704,
+              "selectedSpeciesTechnologyIds": [
+                14201,
+                12202,
+                14203,
+                14204,
+                14101,
+                14102,
+                14103,
+                14104,
+                14105,
+                14106,
+                14107,
+                14108,
+                14109,
+                14110,
+                14111,
+                14112
+              ],
+              "ships": {
+                "202": 1,
+                "203": 10,
+                "204": 0,
+                "205": 0,
+                "206": 0,
+                "207": 0,
+                "208": 0,
+                "209": 0,
+                "210": 5,
+                "211": 0,
+                "212": 9,
+                "213": 0,
+                "214": 0,
+                "215": 0,
+                "217": 2,
+                "218": 0,
+                "219": 0
+              },
+              "siblingId": 0,
+              "speciesBuildings": {
+                "14101": 30,
+                "14102": 23,
+                "14103": 1
+              },
+              "speciesResearches": {
+                "12202": 2,
+                "14201": 1,
+                "14203": 1,
+                "14204": 1
+              },
+              "system": 40
+            },
+            "12345681": {
+              "baseProduction": {
+                "crystal": 75,
+                "deuterium": 0,
+                "metal": 202
+              },
+              "buffs": [],
+              "buildings": {
+                "1": 18,
+                "12": 7,
+                "14": 8,
+                "15": 0,
+                "2": 18,
+                "21": 7,
+                "22": 6,
+                "23": 5,
+                "24": 5,
+                "3": 14,
+                "31": 4,
+                "33": 0,
+                "34": 0,
+                "36": 4,
+                "4": 18,
+                "41": 0,
+                "42": 0,
+                "43": 0,
+                "44": 1
+              },
+              "defenses": {
+                "401": 100,
+                "402": 10,
+                "403": 10,
+                "404": 5,
+                "405": 1,
+                "406": 0,
+                "407": 1,
+                "408": 0,
+                "502": 0,
+                "503": 0
+              },
+              "galaxy": 1,
+              "id": 12345681,
+              "position": 8,
+              "production": {
+                "crystal": 14209.0309008,
+                "deuterium": 4110.028072,
+                "metal": 29205.462544
+              },
+              "resources": {
+                "crystal": 54123,
+                "deuterium": 24876,
+                "energy": 440,
+                "food": 8177,
+                "metal": 229233,
+                "population": 409672
+              },
+              "selectedSpeciesId": 702,
+              "selectedSpeciesTechnologyIds": [
+                12201,
+                12101,
+                12102,
+                12103,
+                12104,
+                12105,
+                12106,
+                12107,
+                12108,
+                12109,
+                12110,
+                12111,
+                12112
+              ],
+              "ships": {
+                "202": 20,
+                "203": 5,
+                "204": 19,
+                "205": 1,
+                "206": 18,
+                "207": 0,
+                "208": 0,
+                "209": 0,
+                "210": 1,
+                "211": 0,
+                "212": 13,
+                "213": 0,
+                "214": 0,
+                "215": 0,
+                "217": 0,
+                "218": 0,
+                "219": 0
+              },
+              "siblingId": 0,
+              "speciesBuildings": {
+                "12101": 24,
+                "12102": 26,
+                "12103": 1
+              },
+              "speciesResearches": {
+                "12201": 2
+              },
+              "system": 70
+            },
+            "12345682": {
+              "baseProduction": {
+                "crystal": 75,
+                "deuterium": 0,
+                "metal": 202
+              },
+              "buffs": [],
+              "buildings": {
+                "1": 14,
+                "12": 4,
+                "14": 5,
+                "15": 0,
+                "2": 14,
+                "21": 3,
+                "22": 2,
+                "23": 2,
+                "24": 1,
+                "3": 9,
+                "31": 0,
+                "33": 0,
+                "34": 0,
+                "36": 0,
+                "4": 15,
+                "41": 0,
+                "42": 0,
+                "43": 0,
+                "44": 0
+              },
+              "defenses": {
+                "401": 1,
+                "402": 0,
+                "403": 0,
+                "404": 0,
+                "405": 0,
+                "406": 0,
+                "407": 0,
+                "408": 0,
+                "502": 0,
+                "503": 0
+              },
+              "galaxy": 1,
+              "id": 12345682,
+              "position": 8,
+              "production": {
+                "crystal": 7583.394950399999,
+                "deuterium": 1770.7552208,
+                "metal": 15608.971343999998
+              },
+              "resources": {
+                "crystal": 18590,
+                "deuterium": 8155,
+                "energy": 89,
+                "food": 0,
+                "metal": 24408,
+                "population": 100
+              },
+              "selectedSpeciesId": 0,
+              "selectedSpeciesTechnologyIds": [],
+              "ships": {
+                "202": 3,
+                "203": 3,
+                "204": 0,
+                "205": 0,
+                "206": 0,
+                "207": 0,
+                "208": 0,
+                "209": 0,
+                "210": 0,
+                "211": 0,
+                "212": 1,
+                "213": 0,
+                "214": 0,
+                "215": 0,
+                "217": 0,
+                "218": 0,
+                "219": 0
+              },
+              "siblingId": 0,
+              "speciesBuildings": [],
+              "speciesResearches": [],
+              "system": 87
+            }
+          },
+          "playerId": 999999,
+          "playerName": "TestPlayer",
+          "researches": {
+            "106": 5,
+            "108": 8,
+            "109": 9,
+            "110": 6,
+            "111": 8,
+            "113": 8,
+            "114": 8,
+            "115": 7,
+            "117": 5,
+            "118": 1,
+            "120": 10,
+            "121": 7,
+            "122": 6,
+            "123": 1,
+            "124": 7,
+            "199": 0
+          },
+          "spaceObjects": [
+            {
+              "id": 12345678,
+              "type": 1
+            },
+            {
+              "id": 12345679,
+              "type": 1
+            },
+            {
+              "id": 12345680,
+              "type": 1
+            },
+            {
+              "id": 12345681,
+              "type": 1
+            },
+            {
+              "id": 12345682,
+              "type": 1
+            }
+          ],
+          "species": {
+            "distribution": {
+              "12345678": 701,
+              "12345679": 701,
+              "12345680": 704,
+              "12345681": 702,
+              "12345682": null
+            },
+            "values": {
+              "701": {
+                "experience": 37649,
+                "level": 8
+              },
+              "702": {
+                "experience": 0,
+                "level": 0
+              },
+              "703": {
+                "experience": 15435,
+                "level": 5
+              },
+              "704": {
+                "experience": 5998,
+                "level": 3
+              }
+            }
+          }
+        },
+        "headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-encoding": "gzip",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sat, 05 Sep 2026 13:03:37 GMT",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "p3p": "CP=\"This is not a P3P policy. It is a ninja, sneaking by Internet Explorer and escaping its iframe at lightning speed.\"",
+          "pragma": "no-cache",
+          "server": "nginx",
+          "vary": "Accept-Encoding",
+          "x-request-id": "7c9f63e520a8646459812c4bacedb3fa"
+        },
+        "reason": null,
+        "response_url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=accountInfo&asJson=1",
+        "schema": {
+          "kind": "json",
+          "length": 5548,
+          "shape": {
+            "allianceClassId": "NoneType",
+            "characterClassId": "int",
+            "components": "list",
+            "moons": "list",
+            "newAjaxToken": "str",
+            "officers": "dict",
+            "planets": "dict",
+            "playerId": "int",
+            "playerName": "str",
+            "researches": "dict",
+            "spaceObjects": "list",
+            "species": "dict"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "action": "technologyQuantities",
+      "duration_ms": 320,
+      "request": {
+        "has_cp_parameter": false,
+        "headers": {
+          "Accept": "application/json",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "method": "GET",
+        "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=technologyQuantities&asJson=1"
+      },
+      "response": {
+        "available": true,
+        "content_type": "text/html; charset=utf-8",
+        "data": {
+          "components": [],
+          "newAjaxToken": "[REDACTED]",
+          "technologyQuantities": {
+            "1": 16,
+            "10000": 0,
+            "10010": 0,
+            "10011": 0,
+            "10020": 0,
+            "10030": 0,
+            "10031": 0,
+            "10032": 0,
+            "106": 5,
+            "108": 8,
+            "109": 9,
+            "110": 6,
+            "111": 8,
+            "11101": 31,
+            "11102": 28,
+            "11103": 2,
+            "11104": 0,
+            "11105": 0,
+            "11106": 0,
+            "11107": 0,
+            "11108": 0,
+            "11109": 0,
+            "11110": 0,
+            "11111": 0,
+            "11112": 0,
+            "11201": 4,
+            "11202": 2,
+            "11203": 2,
+            "11204": 1,
+            "11205": 2,
+            "11206": 1,
+            "11207": 0,
+            "11208": 0,
+            "11209": 0,
+            "11210": 0,
+            "11211": 0,
+            "11212": 0,
+            "11213": 0,
+            "11214": 0,
+            "11215": 0,
+            "11216": 0,
+            "11217": 0,
+            "11218": 0,
+            "113": 8,
+            "114": 8,
+            "115": 7,
+            "117": 5,
+            "118": 1,
+            "12": 8,
+            "120": 10,
+            "121": 7,
+            "12101": 0,
+            "12102": 0,
+            "12103": 0,
+            "12104": 0,
+            "12105": 0,
+            "12106": 0,
+            "12107": 0,
+            "12108": 0,
+            "12109": 0,
+            "12110": 0,
+            "12111": 0,
+            "12112": 0,
+            "122": 6,
+            "12201": 0,
+            "12202": 0,
+            "12203": 0,
+            "12204": 0,
+            "12205": 0,
+            "12206": 0,
+            "12207": 0,
+            "12208": 0,
+            "12209": 0,
+            "12210": 0,
+            "12211": 0,
+            "12212": 0,
+            "12213": 0,
+            "12214": 0,
+            "12215": 0,
+            "12216": 0,
+            "12217": 0,
+            "12218": 0,
+            "123": 1,
+            "124": 7,
+            "13101": 0,
+            "13102": 0,
+            "13103": 0,
+            "13104": 0,
+            "13105": 0,
+            "13106": 0,
+            "13107": 0,
+            "13108": 0,
+            "13109": 0,
+            "13110": 0,
+            "13111": 0,
+            "13112": 0,
+            "13201": 0,
+            "13202": 0,
+            "13203": 0,
+            "13204": 0,
+            "13205": 0,
+            "13206": 0,
+            "13207": 0,
+            "13208": 0,
+            "13209": 0,
+            "13210": 0,
+            "13211": 0,
+            "13212": 0,
+            "13213": 0,
+            "13214": 0,
+            "13215": 0,
+            "13216": 0,
+            "13217": 0,
+            "13218": 0,
+            "14": 9,
+            "14101": 0,
+            "14102": 0,
+            "14103": 0,
+            "14104": 0,
+            "14105": 0,
+            "14106": 0,
+            "14107": 0,
+            "14108": 0,
+            "14109": 0,
+            "14110": 0,
+            "14111": 0,
+            "14112": 0,
+            "14201": 0,
+            "14202": 0,
+            "14203": 0,
+            "14204": 0,
+            "14205": 0,
+            "14206": 0,
+            "14207": 0,
+            "14208": 0,
+            "14209": 0,
+            "14210": 0,
+            "14211": 0,
+            "14212": 0,
+            "14213": 0,
+            "14214": 0,
+            "14215": 0,
+            "14216": 0,
+            "14217": 0,
+            "14218": 0,
+            "15": 0,
+            "199": 0,
+            "2": 18,
+            "202": 3,
+            "203": 7,
+            "204": 10,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "21": 8,
+            "210": 11,
+            "211": 0,
+            "212": 10,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 1,
+            "218": 0,
+            "219": 0,
+            "22": 7,
+            "220": 0,
+            "23": 7,
+            "24": 6,
+            "3": 14,
+            "31": 10,
+            "33": 0,
+            "34": 1,
+            "36": 4,
+            "4": 18,
+            "401": 150,
+            "402": 10,
+            "403": 10,
+            "404": 1,
+            "405": 1,
+            "406": 0,
+            "407": 1,
+            "408": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "502": 0,
+            "503": 0,
+            "601": 1,
+            "602": 0,
+            "603": 0,
+            "631": 0,
+            "632": 0,
+            "633": 0,
+            "661": 1,
+            "662": 1,
+            "663": 1,
+            "664": 1,
+            "665": 1,
+            "669": 1,
+            "701": 8,
+            "702": 0,
+            "703": 0,
+            "704": 0
+          }
+        },
+        "headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-encoding": "gzip",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sat, 05 Sep 2026 13:03:38 GMT",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "p3p": "CP=\"This is not a P3P policy. It is a ninja, sneaking by Internet Explorer and escaping its iframe at lightning speed.\"",
+          "pragma": "no-cache",
+          "server": "nginx",
+          "vary": "Accept-Encoding",
+          "x-request-id": "b37e8a67f66914ce00fdbc9f74bfd186"
+        },
+        "reason": null,
+        "response_url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=technologyQuantities&asJson=1",
+        "schema": {
+          "kind": "json",
+          "length": 1994,
+          "shape": {
+            "components": "list",
+            "newAjaxToken": "str",
+            "technologyQuantities": "dict"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "action": "importExportInfo",
+      "duration_ms": 335,
+      "request": {
+        "has_cp_parameter": false,
+        "headers": {
+          "Accept": "application/json",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "method": "GET",
+        "url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=importExportInfo&asJson=1"
+      },
+      "response": {
+        "available": true,
+        "content_type": "text/html; charset=utf-8",
+        "data": {
+          "bargainText": "",
+          "components": [],
+          "gotItem": "false",
+          "hasBought": "false",
+          "itemText": "",
+          "name": "",
+          "newAjaxToken": "[REDACTED]",
+          "offersLeft": 0,
+          "price": 6807,
+          "rarity": ""
+        },
+        "headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-encoding": "gzip",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sat, 05 Sep 2026 13:03:38 GMT",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "p3p": "CP=\"This is not a P3P policy. It is a ninja, sneaking by Internet Explorer and escaping its iframe at lightning speed.\"",
+          "pragma": "no-cache",
+          "server": "nginx",
+          "vary": "Accept-Encoding",
+          "x-request-id": "211e079528e62fa498bf3dd2ef457fe1"
+        },
+        "reason": null,
+        "response_url": "https://s1-en.ogame.gameforge.com/game/index.php?page=componentOnly&component=externaldataexport&action=importExportInfo&asJson=1",
+        "schema": {
+          "kind": "json",
+          "length": 186,
+          "shape": {
+            "bargainText": "str",
+            "components": "list",
+            "gotItem": "str",
+            "hasBought": "str",
+            "itemText": "str",
+            "name": "str",
+            "newAjaxToken": "str",
+            "offersLeft": "int",
+            "price": "int",
+            "rarity": "str"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "planet_id": "12345679",
+  "requested_count": 4,
+  "restored": true,
+  "scope": "official authenticated externaldataexport GET endpoints",
+  "supported": true,
+  "version": 1
+}

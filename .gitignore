@@ -1,0 +1,25 @@
+# Ephemeral runtime memory artifacts (probes, workflows, lock files, intermediate JSONs)
+# Only track long-term memory state files to prevent repo bloat and credential leaks:
+/runtime/memory/*
+!/runtime/memory/.gitkeep
+!/runtime/memory/*.example.md
+
+# Screenshots
+/runtime/screenshots/*
+!/runtime/screenshots/.gitkeep
+
+# Ephemeral lock files
+*.lock
+
+# Local machine files
+.DS_Store
+*.log
+.env
+scripts/ogame/config/server.toml
+!scripts/ogame/config/server.example.toml
+
+# Ephemeral root artifacts
+/scout-report.json
+
+__pycache__/
+*.pyc

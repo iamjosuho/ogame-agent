@@ -1,0 +1,7 @@
+# OGame server configuration
+# Copy this file to server.toml and fill in your server details.
+# server.toml is gitignored — your credentials stay local.
+
+base_url = "https://s1-en.ogame.gameforge.com/game/index.php"
+# Optional: if your lobby account has multiple universes, specify the universe name
+# universe_name = "Earth"
