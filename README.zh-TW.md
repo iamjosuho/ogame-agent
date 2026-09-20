@@ -92,6 +92,19 @@ schema_version = 1
 
 *(可選)* 編輯 `scripts/ogame/config/strategy.toml` 可自訂壓電門檻、物流下限與閒置收割條件。
 
+#### 步驟 4：建立 AI Agent 的定期巡邏排程（要自動化就必做）
+`init` 與 `matrix` 只會完成專案初始化與連線驗證，**不會**自動建立或啟用定期任務。若要讓巡邏自動執行，請依你使用的 AI Agent，在它的 Scheduled Tasks、定期提示詞或 Cron 整合中自行建立喚醒排程。
+
+1. 使用該 AI Agent 自己的排程功能，並讓任務在這個 repository 範圍內執行。
+2. 依你的遊戲節奏調整頻率（可先從每小時一次開始）；同一帳號不要建立會重疊的多個排程。
+3. 複製或調整 repo 內範本：[`.agent/skills/ogame-patrol/CRONJOB_PROMPT.md`](.agent/skills/ogame-patrol/CRONJOB_PROMPT.md)。它刻意隨 repo 版控，方便你依所用 AI Agent 的能力與排程格式檢視、修改後貼進排程任務。
+
+> [!IMPORTANT]
+> 排程要喚醒能讀懂提示詞、並在本專案內繼續工作的 AI Agent。單純用 OS Cron 只執行 `patrol-start`，只會完成有安全閘門的資料交接，不能取代 Agent 的策略審查與執行循環。
+
+> [!NOTE]
+> 修改 `CRONJOB_PROMPT.md` 只會更新 repo 內的範本；不會修改、啟用、暫停或刪除已在 AI Agent 中設定好的任務。既有排程要另外到該 Agent 的排程介面調整。
+
 ---
 
 ## 核心哲學與安全護欄
