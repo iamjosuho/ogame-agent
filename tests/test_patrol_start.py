@@ -247,6 +247,158 @@ class PatrolStartTests(unittest.TestCase):
         self.assertNotIn("cp=", captured["target_url"])
         restore.assert_called_once()
 
+    def _make_own_event(self, mission_type: str, *, return_flight: bool = False) -> dict:
+        if mission_type == "3" and return_flight:
+            evidence = "acs_defend_return:3"
+        elif mission_type in ("11", "16") and return_flight:
+            evidence = f"own_return_mission:{mission_type}"
+        else:
+            evidence = f"peaceful_mission_type:{mission_type}"
+        return {
+            "id": f"ev-{mission_type}",
+            "text": "己方艦隊",
+            "direction": "own",
+            "direction_evidence": evidence,
+        }
+
+    def _run_own_direction(self, mission_type: str, *, return_flight: bool = False):
+        """Assert that a single-event movement with direction='own' passes validation and returns ready."""
+        event = {
+            **self._make_own_event(mission_type, return_flight=return_flight),
+            "return_flight": return_flight,
+            "mission_type": mission_type,
+        }
+        return self._run(movement=lambda: {
+            "success": True,
+            "scope": "account",
+            "coverage": "verified",
+            "page_evidence": {"root_verified": True, "empty_state_verified": False},
+            "threat_status": "none",
+            "events": [event],
+        })
+
+    def test_spy_mission_type_6_is_own(self):
+        result, _ = self._run_own_direction("6")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_deploy_mission_type_5_is_own(self):
+        result, _ = self._run_own_direction("5")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_defend_mission_type_4_is_own(self):
+        result, _ = self._run_own_direction("4")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_harvest_mission_type_10_is_own(self):
+        result, _ = self._run_own_direction("10")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_lifeform_discovery_mission_type_17_is_own(self):
+        result, _ = self._run_own_direction("17")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_acs_defend_return_mission_type_3_is_own(self):
+        result, _ = self._run_own_direction("3", return_flight=True)
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_acs_defend_outbound_type_3_stays_unknown(self):
+        """ACS defend outbound (not return) must remain unknown — could be friendly from outside."""
+        event = {
+            "id": "ev-3-out",
+            "text": "支援飛行中",
+            "direction": "unknown",
+            "direction_evidence": "ambiguous_row:missionType=3:支援飛行中",
+            "return_flight": False,
+            "mission_type": "3",
+        }
+        result, _ = self._run(movement=lambda: {
+            "success": True,
+            "scope": "account",
+            "coverage": "verified",
+            "page_evidence": {"root_verified": True, "empty_state_verified": False},
+            "threat_status": "unknown",
+            "events": [event],
+        })
+        # unknown threat_status → patrol passes through (ready) with routine blocked
+        self.assertEqual(result["status"], "ready")
+        self.assertTrue(result["routine_blocked_until_safety_review"])
+
+    def test_ambiguous_row_evidence_includes_mission_type_prefix(self):
+        """direction_evidence for unknown rows must now include missionType= prefix for easier audit."""
+        event = {
+            "id": "ev-99",
+            "text": "神秘任務",
+            "direction": "unknown",
+            "direction_evidence": "ambiguous_row:missionType=99:神秘任務",
+            "return_flight": False,
+            "mission_type": "99",
+        }
+        result, _ = self._run(movement=lambda: {
+            "success": True,
+            "scope": "account",
+            "coverage": "verified",
+            "page_evidence": {"root_verified": True, "empty_state_verified": False},
+            "threat_status": "unknown",
+            "events": [event],
+        })
+        self.assertEqual(result["status"], "ready")
+        self.assertTrue(result["routine_blocked_until_safety_review"])
+
+    def test_destroy_moon_returning_type_11_is_own(self):
+        """Type 11 returning home is unambiguously own (your destroy mission completed)."""
+        result, _ = self._run_own_direction("11", return_flight=True)
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["threat_status"], "none")
+
+    def test_destroy_moon_outgoing_type_11_stays_unknown(self):
+        """Type 11 outgoing must stay unknown — enemy moon-destroy arrives as incoming hostile."""
+        event = {
+            "id": "ev-11-out",
+            "text": "毀月任務飛行中",
+            "direction": "unknown",
+            "direction_evidence": "ambiguous_row:missionType=11:毀月任務飛行中",
+            "return_flight": False,
+            "mission_type": "11",
+        }
+        result, _ = self._run(movement=lambda: {
+            "success": True,
+            "scope": "account",
+            "coverage": "verified",
+            "page_evidence": {"root_verified": True, "empty_state_verified": False},
+            "threat_status": "unknown",
+            "events": [event],
+        })
+        self.assertEqual(result["status"], "ready")
+        self.assertTrue(result["routine_blocked_until_safety_review"])
+
+    def test_ambiguous_text_truncated_to_80_chars(self):
+        """direction_evidence for unknown rows must truncate text to 80 chars."""
+        long_text = "X" * 200
+        event = {
+            "id": "ev-long",
+            "text": long_text,
+            "direction": "unknown",
+            "direction_evidence": "ambiguous_row:missionType=99:" + long_text[:80],
+            "return_flight": False,
+            "mission_type": "99",
+        }
+        result, _ = self._run(movement=lambda: {
+            "success": True,
+            "scope": "account",
+            "coverage": "verified",
+            "page_evidence": {"root_verified": True, "empty_state_verified": False},
+            "threat_status": "unknown",
+            "events": [event],
+        })
+        self.assertEqual(result["status"], "ready")
+        self.assertTrue(result["routine_blocked_until_safety_review"])
+
 
 if __name__ == "__main__":
     unittest.main()

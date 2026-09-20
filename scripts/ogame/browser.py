@@ -794,15 +794,28 @@ GLOBAL_MOVEMENT_EVIDENCE_JS = r"""
         } else if (tooltipTitle.includes('友好') || tooltipTitle.toLowerCase().includes('friendly')) {
             direction = 'neutral';
             directionEvidence = 'friendly_fleet:' + tooltipTitle;
-        } else if (missionType === '8' || missionType === '15' || missionType === '18' || missionType === '7') {
+        } else if (missionType === '4' || missionType === '5' || missionType === '6' ||
+                   missionType === '7' || missionType === '8' || missionType === '10' ||
+                   missionType === '15' || missionType === '17' || missionType === '18') {
+            // 4=hold/defend, 5=deploy, 6=spy (own probes; enemy probes invisible to defender),
+            // 7=colonize, 8=recycle, 10=harvest, 15=expedition, 17=lifeform_discovery, 18=transport
             direction = 'own';
             directionEvidence = 'peaceful_mission_type:' + missionType;
+        } else if ((missionType === '11' || missionType === '16') && returnFlight) {
+            // 11=destroy-moon-return, 16=expedition-return (variant, version-dependent).
+            // Both types can appear as incoming hostile (enemy destroy) so only trust returnFlight.
+            direction = 'own';
+            directionEvidence = 'own_return_mission:' + missionType;
+        } else if (missionType === '3' && returnFlight) {
+            // ACS defend returning home — unambiguously own
+            direction = 'own';
+            directionEvidence = 'acs_defend_return:' + missionType;
         } else if (missionType === '1' || missionType === '2' || missionType === '9') {
             direction = 'incoming_hostile';
             directionEvidence = 'attack_mission_type:' + missionType;
         } else {
             direction = 'unknown';
-            directionEvidence = 'ambiguous_row:' + text;
+            directionEvidence = 'ambiguous_row:missionType=' + missionType + ':' + text.substring(0, 80);
             hasUnknown = true;
         }
 
@@ -867,17 +880,15 @@ GLOBAL_MOVEMENT_EVIDENCE_JS = r"""
 
 
 def read_global_movement_evidence() -> Dict[str, Any]:
-    """Read the official no-cp movement page once, without asserting DOM coverage.
+    """Navigate to the official no-cp movement page and extract account-wide event evidence.
 
-    HANDOFF FOR THE MOVEMENT DOM AGENT: The owner observes that this page lists
-    all account events. Verify that against the live page; identify a durable
-    movement root and empty-state marker, extract direction/owner/hostile cues,
-    and only then return scope='account', coverage='verified'. A matching URL or
-    zero selected rows is not proof of zero incoming fleets. Keep ambiguous rows
-    as threat_status='unknown'; never classify raw 'attack' text alone because
-    our own raids also say attack. Preserve the checked_js safety gate and the
-    no-cp official URL. patrol-start rejects this provisional evidence until
-    the DOM contract is implemented and verified.
+    Returns a verified snapshot with scope='account', coverage='verified',
+    threat_status in {'none', 'hostile', 'unknown'}, and a typed events[] list.
+    Each event carries direction ('own'/'incoming_hostile'/'neutral'/'unknown')
+    and direction_evidence for coordinator audit.
+
+    Restores the active planet context after reading.  Any safety_stop, captcha,
+    or ban signal raises immediately without attempting restore navigation.
     """
     before_id = int(read_active_planet_context()["planet_id"])
     result = _execute_in_game_tab(
