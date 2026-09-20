@@ -92,20 +92,23 @@ schema_version = 1
 
 *(Optional)* You can also customize `scripts/ogame/config/strategy.toml` to tweak energy squeeze margins, transport thresholds, and inactive raid loot limits.
 
-#### Step 4: Set Up Your AI Agent's Recurring Patrol (Required for Automation)
-`init` and `matrix` prepare and verify the project; they do **not** create or enable a recurring task. To run autonomous patrols, create a recurring task, scheduled prompt, or Cron-based agent wakeup in the AI Agent you use.
+---
 
-1. Use your AI Agent's own scheduler (for example, its Scheduled Tasks, recurring prompt, or Cron integration) and keep the task scoped to this repository.
-2. Set the frequency to suit your play style (hourly is a reasonable starting point); do not create overlapping schedules for the same account.
-3. Paste or adapt the repository template: [`.agent/skills/ogame-patrol/CRONJOB_PROMPT.md`](.agent/skills/ogame-patrol/CRONJOB_PROMPT.md). It is deliberately versioned in the repository so you can review and tailor the prompt for the capabilities and scheduling syntax of your chosen AI Agent.
+### Final Step for Both Quick Start Options: Set Up Your AI Agent's Recurring Patrol (Required for Automation)
+
+Whether you chose Option A or Option B, `init` and `matrix` only prepare and verify the project; they do **not** create or enable a recurring task. To run autonomous patrols, create a recurring task, scheduled prompt, or Cron-based agent wakeup in your chosen AI Agent. In that Agent's scheduler, set:
+
+1. **Working directory / project:** this cloned `ogame-agent` repository.
+2. **Frequency:** adjust it to suit your play style; hourly is a reasonable starting point.
+3. **Prompt:** [`.agent/skills/ogame-patrol/CRONJOB_PROMPT.md`](.agent/skills/ogame-patrol/CRONJOB_PROMPT.md). Copy it into the scheduler and adapt it as needed for your chosen AI Agent.
+
+Do not create duplicate or overlapping schedules for the same account.
 
 > [!IMPORTANT]
 > The scheduler should wake an AI Agent that can follow the prompt and continue in this project. A bare OS Cron command running only `patrol-start` performs the safety-gated evidence handoff, but does not replace the Agent's strategy review or execution loop.
 
 > [!NOTE]
 > Updating `CRONJOB_PROMPT.md` changes only the template in this repository. It does not change, enable, pause, or delete a task already configured in your AI Agent; update that scheduler separately.
-
----
 
 ## Core Philosophy & Guardrails
 
